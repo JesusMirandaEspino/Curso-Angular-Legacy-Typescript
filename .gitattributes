@@ -4,3 +4,6 @@ static/* linguist-vendored
 # Enable syntax highlighting for files with `.gitattributes` extensions.
 #
 *.gitattributes linguist-language=gitattributes
+
+
+/intro/node_modules
