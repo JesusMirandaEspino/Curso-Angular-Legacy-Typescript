@@ -39,3 +39,26 @@ const personaje: Personaje = {
     hp: 100,
     habilidades: [ 'fuego', 'agua', 'rayo' ]
 }
+
+
+
+
+/********************************/
+//      Funciones      
+/********************************/
+const sumar = (a: number, b: number): number => {
+    return a + b;
+}
+
+const multiplicar = (a: number, b: number): number => {
+    return a * b;
+}
+
+
+console.log('*********************************************');
+console.log( sumar(5,10) );
+console.log('*********************************************');
+
+console.log('*********************************************');
+console.log( multiplicar(5,10) );
+console.log('*********************************************');
