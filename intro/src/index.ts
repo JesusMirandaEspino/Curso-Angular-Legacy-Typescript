@@ -13,11 +13,11 @@ console.log('Hola Mundo!');
 //    Variables en Typescript
 /********************************/
 
-let nombre: string  = 'Jesus';
-let edad:   number  = 33;
-let valor:  boolean = false;
+let nombrepersona: string  = 'Jesus';
+let edadpersona:   number  = 33;
+let valorpersona:  boolean = false;
 
-console.log( `Hola soy ${nombre} mi edad es ${edad}` );
+console.log( `Hola soy ${nombrepersona} mi edad es ${edadpersona}` );
 
 
 /********************************/
@@ -82,13 +82,16 @@ console.log('*********************************************');
 interface SuperHeroe{
     nombre: string;
     edad: number;
-    direccion: {
+    direccion: Direccion,
+    MostrarDireccion: () => string;
+}
+
+interface Direccion{
         calle: string;
         pais: string
         ciudad: string
-    },
-    MostrarDireccion: () => string;
 }
+
 
 const superHeroe = {
     nombre: 'spiderman',
@@ -102,3 +105,18 @@ const superHeroe = {
         return `${this.nombre}  ${this.direccion}  ${this.direccion.pais}`
     }
 }
+
+
+
+
+/********************************/
+//      Desestructuracion     
+/********************************/
+
+
+const {nombre, edad, direccion:{calle, ciudad, pais} } = superHeroe;
+
+
+console.log('*********************************************');
+console.log( `Heroe: ${nombre}. Edad: ${edad}. Direccion ${calle}, ${ciudad}, ${pais} ` );
+console.log('*********************************************');
