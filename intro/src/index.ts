@@ -1,3 +1,7 @@
+/********************************/
+//      Importaciones     
+/********************************/
+import { Producto, calculaISV } from './product';
 
 
 console.log('Hola Mundo!');
@@ -93,7 +97,7 @@ interface Direccion{
 }
 
 
-const superHeroe = {
+const superHeroe: SuperHeroe = {
     nombre: 'spiderman',
     edad: 30,
     direccion: {
@@ -130,11 +134,6 @@ console.log( `Valor del arreglo de la posicion 1 ${goku}` );
 console.log( `Valor del arreglo de la posicion 3 ${vegeta}` );
 
 
-interface Producto{
-    desc: string;
-    precio: number;
-}
-
 const telefono: Producto = {
     desc: 'Hauwei',
     precio: 3200
@@ -149,17 +148,28 @@ const articulos = [ telefono, tableta ];
 
 
 
-const calculaISV = ( productos: Producto[] ): [number, number] => {
-
-    let total = 0;
-    productos.forEach( ( { precio } ) => {
-        total += precio;
-    });
-    return [total, total * 0.15];
-};
-
 const [ total, isv ] = calculaISV(  articulos )
 
 console.log('*********************************************');
 console.log(`El total  ${total}`  );
 console.log(`El IVA  ${isv}`  );
+
+
+/********************************/
+//      Clases     
+/********************************/
+class Heroe {
+    public alterEgo: string;
+    public edad: number;
+    static nombreReal: number;
+
+    constructor(){}
+
+    imprimirAlterEgo(){
+        console.log( this.alterEgo );
+    }
+
+}
+
+
+const ironMan = new Heroe();
