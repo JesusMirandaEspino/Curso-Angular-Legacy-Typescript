@@ -120,3 +120,46 @@ const {nombre, edad, direccion:{calle, ciudad, pais} } = superHeroe;
 console.log('*********************************************');
 console.log( `Heroe: ${nombre}. Edad: ${edad}. Direccion ${calle}, ${ciudad}, ${pais} ` );
 console.log('*********************************************');
+
+
+const dbz: string[] = ['Goku', 'Gohan', 'vegeta'];
+const [ goku, , vegeta ] = dbz;
+
+console.log('*********************************************');
+console.log( `Valor del arreglo de la posicion 1 ${goku}` );
+console.log( `Valor del arreglo de la posicion 3 ${vegeta}` );
+
+
+interface Producto{
+    desc: string;
+    precio: number;
+}
+
+const telefono: Producto = {
+    desc: 'Hauwei',
+    precio: 3200
+}
+
+const tableta: Producto = {
+    desc: 'Asus',
+    precio: 4200
+}
+
+const articulos = [ telefono, tableta ];
+
+
+
+const calculaISV = ( productos: Producto[] ): [number, number] => {
+
+    let total = 0;
+    productos.forEach( ( { precio } ) => {
+        total += precio;
+    });
+    return [total, total * 0.15];
+};
+
+const [ total, isv ] = calculaISV(  articulos )
+
+console.log('*********************************************');
+console.log(`El total  ${total}`  );
+console.log(`El IVA  ${isv}`  );
