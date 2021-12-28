@@ -159,17 +159,21 @@ console.log(`El IVA  ${isv}`  );
 //      Clases     
 /********************************/
 class Heroe {
-    public alterEgo: string;
-    public edad: number;
-    static nombreReal: number;
 
-    constructor(){}
+    constructor( 
+        public alterEgo: string, 
+        public edad?: number, 
+        public nombreReal?: string 
+        ){
+    }
 
-    imprimirAlterEgo(){
+    imprimirAlterEgo(  ){
         console.log( this.alterEgo );
     }
 
 }
 
 
-const ironMan = new Heroe();
+const ironMan = new Heroe('ironman');
+
+console.log(  ironMan );
