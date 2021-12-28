@@ -158,13 +158,22 @@ console.log(`El IVA  ${isv}`  );
 /********************************/
 //      Clases     
 /********************************/
-class Heroe {
+class PersonaNormal{
+    constructor(
+        public nombre:      string,
+        public direccion:   string
+    ){}
+}
+
+
+class Heroe extends PersonaNormal{
 
     constructor( 
-        public alterEgo: string, 
-        public edad?: number, 
-        public nombreReal?: string 
+        public alterEgo:    string, 
+        public edad:       number, 
+        public nombreReal: string 
         ){
+            super( nombreReal,  'New York USA');  
     }
 
     imprimirAlterEgo(  ){
@@ -174,6 +183,6 @@ class Heroe {
 }
 
 
-const ironMan = new Heroe('ironman');
+const ironMan = new Heroe('ironman', 35, 'Tony');
 
 console.log(  ironMan );
