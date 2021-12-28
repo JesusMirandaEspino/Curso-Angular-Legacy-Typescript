@@ -186,3 +186,32 @@ class Heroe extends PersonaNormal{
 const ironMan = new Heroe('ironman', 35, 'Tony');
 
 console.log(  ironMan );
+
+
+
+
+/********************************/
+//      Encadenamiento     
+/********************************/
+
+interface Pasajero{
+    nombre: string;
+    hijos?: string[];
+}
+
+const pasajero1: Pasajero = {
+    nombre: 'Jesus'
+}
+
+const pasajero2: Pasajero = {
+    nombre: 'Miriam',
+    hijos: ['gemelo1', 'gemelo2']
+}
+
+
+const imprimirHijos = ( pasajero: Pasajero ) => {
+    const cantidadHijos = pasajero.hijos?.length || 0;
+    console.log('Cantidad hijos: ', cantidadHijos );
+}
+
+imprimirHijos(pasajero2);
