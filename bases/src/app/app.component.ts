@@ -11,4 +11,10 @@ export class AppComponent {
   // variable del contador
   numero: number = 10;
 
+  acumular(valor: number){
+    this.numero += valor;
+  }
+
+
+
 }
