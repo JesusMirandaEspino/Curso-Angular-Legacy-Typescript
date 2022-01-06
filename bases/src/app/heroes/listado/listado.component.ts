@@ -6,8 +6,11 @@ import { Component,  } from '@angular/core';
 })
 export class ListadoComponent  {
 
+  heroes: string[] = ['Spiderman', 'Iroman', 'Hulk', 'Thor', 'Doctor Strange'];
 
 
-
+  borrarHeroe(i: number){
+    this.heroes.splice(i, 1);
+  }
 
 }
