@@ -7,11 +7,15 @@
 
 
 
-<h3>Listado de Heroes Borrados</h3>
+<div  *ngIf="heroeBorrado.length > 0" >
+  <h3>Listado de Heroes Borrados</h3>
 
-<ul>
-  <li  *ngFor="let heroeBorrado of heroeBorrado; let i = index" >
-    <p>{{ i + 1 }}.- {{ heroeBorrado }} </p>  </li>
-</ul>
+  <ul>
+    <li  *ngFor="let heroeBorrado of heroeBorrado; let i = index" >
+      <p>{{ i + 1 }}.- {{ heroeBorrado }} </p>  </li>
+  </ul>
+
+</div>
+
 
 
