@@ -89,15 +89,18 @@ interface SuperHeroe{
     direccion: Direccion,
     MostrarDireccion: () => string;
 }
-
 interface Direccion{
         calle: string;
         pais: string
         ciudad: string
 }
 
+<<<<<<< Updated upstream
 
 const superHeroe: SuperHeroe = {
+=======
+const superHeroe = {
+>>>>>>> Stashed changes
     nombre: 'spiderman',
     edad: 30,
     direccion: {
@@ -110,16 +113,11 @@ const superHeroe: SuperHeroe = {
     }
 }
 
-
-
-
 /********************************/
 //      Desestructuracion     
 /********************************/
 
-
 const {nombre, edad, direccion:{calle, ciudad, pais} } = superHeroe;
-
 
 console.log('*********************************************');
 console.log( `Heroe: ${nombre}. Edad: ${edad}. Direccion ${calle}, ${ciudad}, ${pais} ` );
