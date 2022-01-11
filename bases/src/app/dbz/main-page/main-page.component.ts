@@ -13,6 +13,18 @@ interface Personaje{
 })
 export class MainPageComponent implements OnInit {
 
+
+  personajes: Personaje[] = [
+    {
+      nombre: 'Goku',
+      poder: 25000
+    },
+    {
+      nombre: 'Vegeta',
+      poder: 20000
+    }
+  ]
+
   nuevo: Personaje = {
     nombre: 'Trunks',
     poder: 14000
@@ -25,6 +37,15 @@ export class MainPageComponent implements OnInit {
 
 
   agregar(){
+    if( this.nuevo.nombre.trim().length === 1 ){
+      return;
+    }
+
+    this.personajes.push( this.nuevo );
+    this.nuevo = {
+    nombre: '',
+    poder: 0
+  }
 
   }
 
