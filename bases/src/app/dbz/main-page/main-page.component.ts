@@ -19,7 +19,12 @@ export class MainPageComponent implements OnInit {
       nombre: 'Vegeta',
       poder: 20000
     }
-  ]
+  ];
+
+  nuevo = {
+    nombre: 'Maestro Roshi',
+    poder: 5000
+  }
 
 
 
