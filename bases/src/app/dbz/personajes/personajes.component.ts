@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Input } from '@angular/core';
+import { Personaje } from '../interfaces/dbz.interfaces';
 @Component({
   selector: 'app-personajes',
   templateUrl: './personajes.component.html',
@@ -7,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonajesComponent implements OnInit {
 
-  personajes: any[] = [];
+  @Input() personajes: Personaje[] = [];
 
-  constructor() { }
+  constructor() {
+    // code
+  }
 
   ngOnInit(): void {
+  // code
   }
 
 }
