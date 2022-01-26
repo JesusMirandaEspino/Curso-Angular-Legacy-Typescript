@@ -38,6 +38,12 @@ export class MainPageComponent implements OnInit {
 
 
 
+  agregarNuevoPersonaje( argumento: Personaje ){
+
+    this.personajes.push(argumento);
+
+  }
+
 
 
 }
