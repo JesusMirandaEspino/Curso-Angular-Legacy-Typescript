@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Personaje } from '../interfaces/dbz.interfaces';
+import { DbzService } from '../services/dbz.service';
 
 @Component({
   selector: 'app-main-page',
@@ -28,7 +29,7 @@ export class MainPageComponent implements OnInit {
 
 
 
-  constructor() {
+  constructor(  private dbzService: DbzService ) {
     // code
   }
 
