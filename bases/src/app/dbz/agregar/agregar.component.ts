@@ -14,7 +14,7 @@ export class AgregarComponent implements OnInit {
     poder: 0
   }
 
-  @Output() onNuevoPersonaje: EventEmitter<Personaje> = new EventEmitter();
+ // @Output() onNuevoPersonaje: EventEmitter<Personaje> = new EventEmitter();
 
   constructor(  private dbzService: DbzService ) {
     // code
@@ -30,7 +30,9 @@ export class AgregarComponent implements OnInit {
       return;
     }
 
-    this.onNuevoPersonaje.emit(  this.nuevo );
+    // this.onNuevoPersonaje.emit(  this.nuevo );
+
+    this.dbzService.agregarNuevoPersonaje( this.nuevo );
 
     this.nuevo = {
     nombre: '',

@@ -21,7 +21,12 @@ export class DbzService{
   }
 
   constructor(){
-    console.log('Servicio');
+    // code
+  }
+
+
+  agregarNuevoPersonaje( personaje: Personaje ){
+    this._personajes.push( personaje );
   }
 
 }
