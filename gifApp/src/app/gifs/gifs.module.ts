@@ -6,11 +6,12 @@ import { ResultadosComponent } from './resultados/resultados.component';
 
 
 
+
 @NgModule({
   declarations: [
     GifsPageComponent,
     BusquedaComponent,
-    ResultadosComponent
+    ResultadosComponent,
   ],
   exports: [
     GifsPageComponent,
