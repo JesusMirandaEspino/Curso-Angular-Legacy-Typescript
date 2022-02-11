@@ -5,8 +5,13 @@ import { Injectable } from '@angular/core';
 })
 export class GifsService {
 
+  private apyk: string = 'Qmar0HBJRlLnLaX5QQMHEsae5AiucqSG';
+  private url: string = 'api.giphy.com/v1/gifs/search';
   private _historial: string[] = [];
 
+  //api_key
+  // q
+  // limit
 
   get historial(){
 
@@ -16,7 +21,6 @@ export class GifsService {
   constructor() {
     // code
   }
-
 
 
   buscarGifs( query: string ){
