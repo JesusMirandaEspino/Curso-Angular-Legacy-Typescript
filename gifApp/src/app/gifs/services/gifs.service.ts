@@ -9,6 +9,7 @@ export class GifsService {
 
 
   get historial(){
+
     return [...this._historial];
   }
 
@@ -19,7 +20,15 @@ export class GifsService {
 
 
   buscarGifs( query: string ){
-    this._historial.unshift( query );
+
+    query = query.trim().toLocaleLowerCase();
+
+    if( !this._historial.includes( query ) ){
+      this._historial.unshift( query );
+      this._historial = this._historial.splice(0,10);
+    }
+
+
   }
 
 }

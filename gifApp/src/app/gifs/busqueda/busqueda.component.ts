@@ -22,6 +22,12 @@ buscar(){
 
   const valor = this.txtBuscar.nativeElement.value;
 
+  if( valor.trim().length === 0 ){
+    return;
+  }
+
+  console.log('hola mundo');
+
   this.gifService.buscarGifs( valor );
 
   this.txtBuscar.nativeElement.value = '';
