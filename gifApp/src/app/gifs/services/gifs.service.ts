@@ -35,7 +35,7 @@ export class GifsService {
       this._historial = this._historial.splice(0,10);
     }
 
-    this.http.get( `${this.url}?api_key=${this.apyk}&q=goku&limit=10` )
+    this.http.get( `${this.url}?api_key=${this.apyk}&q=${query}&limit=10` )
       .subscribe( (res: any) => {
         console.log( res.data );
       });
