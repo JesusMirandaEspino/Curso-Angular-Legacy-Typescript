@@ -1,8 +1,10 @@
 export interface SearchResponse {
-    data: Datum[];
+    data:       Gif[];
+    pagination: Pagination;
+    meta:       Meta;
 }
 
-export interface Datum {
+export interface Gif {
     type:                       string;
     id:                         string;
     url:                        string;
@@ -105,4 +107,16 @@ export interface User {
     instagram_url: string;
     website_url:   string;
     is_verified:   boolean;
+}
+
+export interface Meta {
+    status:      number;
+    msg:         string;
+    response_id: string;
+}
+
+export interface Pagination {
+    total_count: number;
+    count:       number;
+    offset:      number;
 }
