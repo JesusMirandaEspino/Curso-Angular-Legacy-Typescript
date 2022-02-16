@@ -1,5 +1,15 @@
 
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-          Exercitationem amet fugiat necessitatibus expedita rem laboriosam maiores,
-          tenetur rerum eius omnis quas nobis ipsam nesciunt reprehenderit perferendis,
-          eveniet laborum deleniti obcaecati.</p>
+<section class="row">
+
+  <div class="col-md-4 col-sm-6" *ngFor="let item of resultados">
+    <div class="card" >
+        <div class="card-body" >
+          <div>
+          <img  class="card-img-top" [src]="item.images.downsized_medium.url" [alt]="item.title">
+        </div>
+          <p class="card-text"> {{ (item.title ) ?  item.title : 'Sin titulo'}} </p>
+        </div>
+    </div>
+  </div>
+
+</section>

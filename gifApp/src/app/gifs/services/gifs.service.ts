@@ -10,6 +10,8 @@ export class GifsService {
   private url: string = 'http://api.giphy.com/v1/gifs/search';
   private _historial: string[] = [];
 
+  public resultados: any[] = [];
+
   // ?api_key=Qmar0HBJRlLnLaX5QQMHEsae5AiucqSG&q=goku&limit=10
 
   //api_key
@@ -37,7 +39,8 @@ export class GifsService {
 
     this.http.get( `${this.url}?api_key=${this.apyk}&q=${query}&limit=10` )
       .subscribe( (res: any) => {
-        console.log( res.data );
+        this.resultados = res.data;
+        console.log( this.resultados );
       });
 
 
