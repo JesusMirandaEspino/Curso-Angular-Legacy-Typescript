@@ -20,4 +20,9 @@ export class SidebarComponent implements OnInit {
     // code
   }
 
+  buscar( termino: string ){
+    this.gifservices.buscarGifs( termino );
+  }
+
+
 }
