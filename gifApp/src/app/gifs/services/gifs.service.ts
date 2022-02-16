@@ -25,7 +25,13 @@ export class GifsService {
   }
 
   constructor(  private http: HttpClient ) {
-    // code
+
+    this._historial = JSON.parse( localStorage.getItem('historial')!) || [];
+/*
+    if( localStorage.getItem('historial') ){
+      this._historial =  JSON.parse( localStorage.getItem('historial')!  );
+    } */
+
   }
 
 
@@ -36,6 +42,9 @@ export class GifsService {
     if( !this._historial.includes( query ) ){
       this._historial.unshift( query );
       this._historial = this._historial.splice(0,10);
+
+      localStorage.setItem( 'historial', JSON.stringify( this._historial ) );
+
     }
 
     this.http.get<SearchResponse>( `${this.url}?api_key=${this.apyk}&q=${query}&limit=10` )
