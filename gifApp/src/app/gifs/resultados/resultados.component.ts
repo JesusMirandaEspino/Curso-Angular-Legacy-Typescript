@@ -20,9 +20,6 @@ export class ResultadosComponent implements OnInit {
     //code
   }
 
-  buscar( termino: string ){
-
-  }
 
 
 }
