@@ -1,1 +1,52 @@
-<p>bycountry works!</p>
+<h2>Por pais</h2>
+
+<hr>
+
+<div class="row">
+
+  <div class="col">
+
+    <form action="" (gnSubmit)="buscar()" >
+      <label for="termino">Pais</label>
+      <input [(ngModel)]="termino" type="text" name="termino" id="" placeholder="Buscar Pais...">
+    </form>
+
+  </div>
+
+
+</div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col  alert  alert-danger">
+    <p>No se encontro un pais con el temino</p>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="col">
+    <table class="table table-hover" aria-describedby="Countries Results">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Bandera</th>
+          <th>Nombre</th>
+          <th>Poblacion</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+          <tr></tr>
+
+      </tbody>
+
+    </table>
+  </div>
+  </div>
+
+
+
+

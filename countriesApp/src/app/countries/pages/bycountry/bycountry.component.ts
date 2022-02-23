@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-bycountry',
   templateUrl: './bycountry.component.html',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BycountryComponent implements OnInit {
 
+  termino: string = '';
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  buscar(){
+    console.log(this.termino);
   }
 
 }
