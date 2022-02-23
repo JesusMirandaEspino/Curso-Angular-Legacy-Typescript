@@ -6,9 +6,9 @@
 
   <div class="col">
 
-    <form action="" (gnSubmit)="buscar()" >
+    <form (keyup.enter)="buscar()" >
       <label for="termino">Pais</label>
-      <input [(ngModel)]="termino" type="text" name="termino" id="" placeholder="Buscar Pais...">
+      <input [(ngModel)]="termino" type="text" name="termino" id=""  placeholder="Buscar Pais...">
     </form>
 
   </div>
