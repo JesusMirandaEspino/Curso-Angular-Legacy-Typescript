@@ -32,6 +32,13 @@ export class BycountryComponent implements OnInit {
       this.error = true;
       this.paises = [];
     });
+  }
+
+  sugerencias( event: any ){
+
+    this.error = false;
+    // TODO crear sugerencias
+
 
   }
 
