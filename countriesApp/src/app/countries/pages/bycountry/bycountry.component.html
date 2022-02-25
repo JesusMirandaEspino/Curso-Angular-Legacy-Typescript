@@ -18,9 +18,9 @@
 
   <hr>
 
-  <div class="row">
+  <div class="row" *ngIf="error">
     <div class="col  alert  alert-danger">
-    <p>No se encontro un pais con el temino</p>
+    <p>No se encontro un pais con el temino: {{ termino }}</p>
   </div>
   </div>
 
