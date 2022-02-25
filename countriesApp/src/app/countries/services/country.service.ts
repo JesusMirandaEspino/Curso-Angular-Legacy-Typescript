@@ -14,11 +14,11 @@ export class CountryService {
 
 
 
-  buscarPais(termino: string): Observable<Country>{
+  buscarPais(termino: string): Observable<Country[]>{
 
     const url = `${this.url}/name/${termino}`;
 
-    return this.http.get<Country>( url );
+    return this.http.get<Country[]>( url );
   }
 
 }

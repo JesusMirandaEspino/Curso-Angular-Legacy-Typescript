@@ -26,10 +26,9 @@ export class BycountryComponent implements OnInit {
     console.log(this.termino);
     this.countryService.buscarPais( this.termino )
     .subscribe(
-      (res) => { console.log(res);
+      (res) => {
+        this.respuesta = res;
     }, ( error ) => {
-      console.log('Error');
-      console.info(error);
       this.error = true;
     });
 
