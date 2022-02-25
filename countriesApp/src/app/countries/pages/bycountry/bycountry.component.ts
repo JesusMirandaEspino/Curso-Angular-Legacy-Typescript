@@ -11,7 +11,7 @@ import { CountryService } from '../../services/country.service';
 export class BycountryComponent implements OnInit {
 
   termino: string = 'hola';
-  respuesta: Country[] = [];
+  paises: Country[] = [];
   error: boolean = false;
 
   constructor( private countryService: CountryService ) { }
@@ -27,9 +27,11 @@ export class BycountryComponent implements OnInit {
     this.countryService.buscarPais( this.termino )
     .subscribe(
       (res) => {
-        this.respuesta = res;
+        this.paises = res;
+        console.log(this.paises);
     }, ( error ) => {
       this.error = true;
+      this.paises = [];
     });
 
   }
