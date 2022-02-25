@@ -6,10 +6,7 @@
 
   <div class="col">
 
-    <form (keyup.enter)="buscar()" >
-      <label for="termino">Pais</label>
-      <input [(ngModel)]="termino" type="text" name="termino" id=""  placeholder="Buscar Pais...">
-    </form>
+    <app-countries-input  (onEnter)=" buscar($event) " ></app-countries-input>
 
   </div>
 
@@ -24,32 +21,14 @@
   </div>
   </div>
 
-  <div class="row">
+  <div class="row"  *ngIf="paises.length > 0">
   <div class="col">
-    <table class="table table-hover" aria-describedby="Countries Results">
-      <thead>
-        <tr>
-          <th id="">#</th>
-          <th id="">Bandera</th>
-          <th id="">Nombre</th>
-          <th id="">Poblacion</th>
-          <th id=""></th>
-        </tr>
-      </thead>
 
-      <tbody>
+    <app-countries-table [countries]="paises" ></app-countries-table>
 
-          <tr *ngFor="let pais of paises; let i = index" >
-            <th class="" id="" > {{ i + 1 }} </th>
-            <th class="" id="" > <img class="flag" [src]="pais.flags.png" alt=""> </th>
-            <th class="" id="" >{{ pais.name.official  }}</th>
-            <th class="" id="" >{{ pais.population | number }}</th>
-            <th class="" id="" > <a  [routerLink]="['/pais', pais.cca2]" >Ver...</a> </th>
-          </tr>
 
-      </tbody>
 
-    </table>
+
   </div>
   </div>
 

@@ -21,14 +21,13 @@ export class BycountryComponent implements OnInit {
   }
 
 
-  buscar(){
+  buscar( termino: string ){
     this.error = false;
-    console.log(this.termino);
+    this.termino = termino;
     this.countryService.buscarPais( this.termino )
     .subscribe(
       (res) => {
         this.paises = res;
-        console.log(this.paises);
     }, ( error ) => {
       this.error = true;
       this.paises = [];
