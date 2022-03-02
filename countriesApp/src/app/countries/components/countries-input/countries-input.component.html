@@ -1,4 +1,4 @@
     <form (keyup.enter)="buscar()" >
       <label for="termino">Pais</label>
-      <input [(ngModel)]="termino" type="text" name="termino" id=""  (input)="keypress()"  placeholder="Buscar Pais...">
+      <input [(ngModel)]="termino" type="text" name="termino" id=""  (input)="keypress()"  [placeholder]="placeholder">
     </form>

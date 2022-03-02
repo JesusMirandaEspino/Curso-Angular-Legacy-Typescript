@@ -1,1 +1,35 @@
-<p>bycapital works!</p>
+<h2>Por Capital</h2>
+
+<hr>
+
+<div class="row">
+
+  <div class="col">
+
+    <app-countries-input  (onEnter)=" buscar($event)"  (onDebounce)=" sugerencias( $event ) "  placeholder="Buscar por capital..." ></app-countries-input>
+
+  </div>
+
+
+</div>
+
+  <hr>
+
+  <div class="row" *ngIf="error">
+    <div class="col  alert  alert-danger">
+    <p>No se encontro un pais con el temino: {{ termino }}</p>
+  </div>
+  </div>
+
+  <div class="row"  *ngIf="paises.length > 0">
+  <div class="col">
+
+    <app-countries-table [countries]="paises" ></app-countries-table>
+
+
+
+
+  </div>
+  </div>
+
+
