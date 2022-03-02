@@ -28,4 +28,9 @@ export class CountryService {
   }
 
 
+  buscarPorCode( id: string ): Observable<Country>{
+    const url = `${this.url}/code/${id}`;
+    return this.http.get<Country>( url );
+  }
+
 }
