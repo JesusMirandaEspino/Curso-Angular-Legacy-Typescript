@@ -1,1 +1,25 @@
-<p>seecountry works!</p>
+<div *ngIf="!pais; else divPais " class="alert alert-inf0">
+  <p>Espera por favor</p>
+</div>
+
+<ng-template #divPais>
+
+<div class="row">
+  <div class="col-12">
+    <h1> Pais:  {{ pais.name.common }}   </h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-4">
+    <h3> Bandera </h3>
+    <img   class="flag" [src]="pais.flags.png" alt="">
+  </div>
+  <div class="col-4">
+    <h3> Poblacion: {{ pais.population | number  }} </h3>
+
+  </div>
+</div>
+
+</ng-template>
+
