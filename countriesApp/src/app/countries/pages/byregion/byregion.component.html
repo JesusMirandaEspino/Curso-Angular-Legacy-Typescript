@@ -6,6 +6,8 @@
 
 <div class="row">
   <div class="col">
-    <button type="" (click)="activarRegion(region)" [ngClass]="{'btn-primary': region == regionActiva }" class="btn btn-outline-primary btn-region" *ngFor="let region of regiones" >  {{  region }} </button>
+    <button type="" (click)="activarRegion(region)" [class]="getClassRegion( region )"
+    class="btn btn-outline-primary btn-region" *ngFor="let region of regiones" >  {{  region  | titlecase }}
+  </button>
   </div>
 </div>
