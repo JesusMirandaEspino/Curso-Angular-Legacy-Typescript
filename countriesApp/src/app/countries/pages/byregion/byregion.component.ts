@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Country } from '../../interfaces/country';
+import { CountryService } from '../../services/country.service';
 
 @Component({
   selector: 'app-byregion',
@@ -11,11 +13,13 @@ export class ByregionComponent implements OnInit {
 
   regionActiva: string = '';
 
+  countries: Country[] = [];
+
   getClassRegion( region: string ): string{
     return ( region == this.regionActiva ) ? 'btn-primary' : 'btn-outline-primary';
   }
 
-  constructor() {
+  constructor(  private countryservices: CountryService  ) {
     // code
   }
 
@@ -25,6 +29,16 @@ export class ByregionComponent implements OnInit {
 
   activarRegion( region: string ){
     this.regionActiva = region;
+
+    this.countryservices.buscarPorRegion( region.toLowerCase() ).subscribe( (resp) => {
+      this.countries = resp;
+    }, ( error ) => {
+      console.log(error);
+      this.countries = [];
+    });
+
   }
+
+
 
 }

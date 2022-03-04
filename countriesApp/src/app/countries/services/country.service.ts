@@ -8,7 +8,9 @@ import { Country } from '../interfaces/country';
 })
 export class CountryService {
 
+
   private url: string = 'https://restcountries.com/v3.1';
+  private urlv2: string = 'https://restcountries.com/v2';
 
   constructor( private http: HttpClient ) { }
 
@@ -31,6 +33,12 @@ export class CountryService {
   buscarPorCode( id: string ): Observable<Country>{
     const url = `${this.url}/alpha/${id}`;
     return this.http.get<Country>( url );
+  }
+
+  buscarPorRegion( region: string ): Observable<Country[]>{
+
+    const urlv2 = `${this.urlv2}/regionalbloc/${region}`;
+    return this.http.get<Country[]>( urlv2 );
   }
 
 }
