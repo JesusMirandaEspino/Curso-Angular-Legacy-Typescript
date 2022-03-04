@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ByregionComponent implements OnInit {
 
-  constructor() { }
+  regiones: string[] = [  'africa', 'americas', 'asia', 'europe', 'oceania' ];
+  regionActiva: string = '';
 
-  ngOnInit(): void {
+  constructor() {
+    // code
+  }
+
+  ngOnInit(    ): void {
+    // code
+  }
+
+  activarRegion( region: string ){
+    this.regionActiva = region;
   }
 
 }
