@@ -28,7 +28,13 @@ export class ByregionComponent implements OnInit {
   }
 
   activarRegion( region: string ){
+
+    if( region == this.regionActiva ){
+      return;
+    }
+
     this.regionActiva = region;
+    this.countries = [];
 
     this.countryservices.buscarPorRegion( region.toLowerCase() ).subscribe( (resp) => {
       this.countries = resp;
