@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Country } from '../../interfaces/country';
-
+import 'animate.css';
 @Component({
   selector: 'app-countries-table',
   templateUrl: './countries-table.component.html',

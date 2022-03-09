@@ -1,4 +1,4 @@
- <table class="table table-hover" aria-describedby="Countries Results">
+ <table class="table table-hover"   aria-describedby="Countries Results">
       <thead>
         <tr>
           <th id="">#</th>
@@ -11,7 +11,7 @@
 
       <tbody>
 
-          <tr *ngFor="let country of countries; let i = index" >
+          <tr *ngFor="let country of countries; let i = index"   class="animate__animated animate__bounce">
             <th class="" id="" > {{ i + 1 }} </th>
             <th class="" id="" > <img class="flag" [src]="country.flags.png" alt=""> </th>
             <th class="" id="" >{{ country.name.common  }}</th>
