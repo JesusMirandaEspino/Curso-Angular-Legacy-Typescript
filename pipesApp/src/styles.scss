@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+ body{
+  margin:10px;
+  font-family: var(--font-family);
+  background-color: var(--surface-a);
+}
+
+.text-color{
+  color:var(--text-color);
+}
+
+
