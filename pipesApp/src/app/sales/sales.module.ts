@@ -4,6 +4,7 @@ import { NumbersComponent } from './pages/numbers/numbers.component';
 import { NoCommonsComponent } from './pages/no-commons/no-commons.component';
 import { BasicComponent } from './pages/basic/basic.component';
 import { OrdinaryComponent } from './pages/ordinary/ordinary.component';
+import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 
 
 
@@ -21,7 +22,8 @@ import { OrdinaryComponent } from './pages/ordinary/ordinary.component';
     OrdinaryComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    PrimeNgModule
   ]
 })
 export class SalesModule { }
