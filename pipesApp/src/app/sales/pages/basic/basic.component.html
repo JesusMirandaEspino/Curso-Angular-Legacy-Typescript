@@ -46,6 +46,10 @@
             <ul>
                 <li> Fecha </li>
                 <li> Fecha | Date </li>
+                <li> Fecha | Date : 'short' </li>
+                <li> Fecha | Date : 'long' </li>
+                <li> Fecha | Date : 'MMMMM' </li>
+                <li> Fecha | Date : 'MMMMM dd, yyyy' </li>
             </ul>
         </p-card>
     </div>
@@ -55,6 +59,10 @@
             <ul>
                 <li> {{ fecha }} </li>
                 <li> {{ fecha | date }} </li>
+                <li> {{ fecha | date: 'short' }} </li>
+                <li> {{ fecha | date: 'long' }} </li>
+                <li> {{ fecha | date: 'MMMM' }} </li>
+                <li> {{ fecha | date: 'MMMM dd, yyyy' }} </li>
             </ul>
         </p-card>
     </div>
