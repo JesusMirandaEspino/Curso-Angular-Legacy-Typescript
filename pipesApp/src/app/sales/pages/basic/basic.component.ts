@@ -11,6 +11,8 @@ export class BasicComponent implements OnInit {
   nombreUpper: string = 'JESUS';
   nombreCompleto: string = 'JeSus MiRAndA';
 
+  fecha: Date = new Date();
+
 
   constructor() {
     // code
