@@ -1,21 +1,30 @@
 <div class="text-color">
 
-  <h1>Basic Pipes</h1>
+    <h1>Basic Pipes</h1>
 
-  <p>Pipes from Angular - Includes </p>
+    <p>Pipes from Angular - Includes </p>
 
 </div>
 
 
 <div class="p-grid">
 
-  <div class="p-col-4">
-    <p-card header="Uppercase">
-      1
-    </p-card>
-  </div>
+    <div class="p-col-4">
+        <p-card header="Uppercase" [subheader]="nombreLower">
+            {{ nombreLower | uppercase }}
+        </p-card>
+    </div>
 
-  <div class="p-col-4"></div>
-  <div class="p-col-4"></div>
+    <div class="p-col-4">
+        <p-card header="Lowercase" [subheader]="nombreUpper">
+            {{ nombreLower | lowercase }}
+        </p-card>
+    </div>
+
+    <div class="p-col-4">
+        <p-card header="Titlecase" [subheader]="nombreCompleto">
+            {{ nombreCompleto | titlecase }}
+        </p-card>
+    </div>
 
 </div>

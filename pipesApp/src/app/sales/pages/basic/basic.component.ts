@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BasicComponent implements OnInit {
 
-  constructor() { }
+  nombreLower: string = 'jesus';
+  nombreUpper: string = 'JESUS';
+  nombreCompleto: string = 'JeSus MiRAndA';
+
+
+  constructor() {
+    // code
+  }
 
   ngOnInit(): void {
+    // code
   }
 
 }
