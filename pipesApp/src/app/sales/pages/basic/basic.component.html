@@ -51,6 +51,13 @@
                 <li> Fecha | Date : 'MMMMM' </li>
                 <li> Fecha | Date : 'MMMMM dd, yyyy' </li>
             </ul>
+
+            <hr>
+            <ul>
+                <li> Fecha | Date : 'long':'GMT-G' </li>
+                <li> Fecha | Date : 'long':'GMT-5' </li>
+                <li> Fecha | Date : 'long':'':'fr' </li>
+            </ul>
         </p-card>
     </div>
 
@@ -64,6 +71,15 @@
                 <li> {{ fecha | date: 'MMMM' }} </li>
                 <li> {{ fecha | date: 'MMMM dd, yyyy' }} </li>
             </ul>
+
+            <hr>
+            <ul>
+                <li> {{ fecha | date: 'long':'GMT-6' }} </li>
+                <li> {{ fecha | date: 'long':'GMT-5' }} </li>
+                <li> {{ fecha | date : 'long':'':'fr-CA'}} </li>
+            </ul>
+
+
         </p-card>
     </div>
 

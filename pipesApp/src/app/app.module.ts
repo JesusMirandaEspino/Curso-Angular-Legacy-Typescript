@@ -11,10 +11,11 @@ import { SharedModule } from './shared/shared.module';
 
 
 import localeEs from '@angular/common/locales/es-HN';
+import localeFr from '@angular/common/locales/fr-CA';
 import { registerLocaleData } from '@angular/common';
 
 registerLocaleData( localeEs );
-
+registerLocaleData( localeFr );
 
 @NgModule({
   declarations: [
