@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NumbersComponent implements OnInit {
 
-  constructor() { }
+  ventasNetas: number = 102512.3654;
+  porcentaje: number = 0.48;
+
+  constructor() {
+    // code
+  }
 
   ngOnInit(): void {
+    // code
   }
 
 }

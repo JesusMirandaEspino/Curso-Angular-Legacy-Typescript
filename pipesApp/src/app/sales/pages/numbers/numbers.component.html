@@ -1,1 +1,31 @@
-<p>numbers works!</p>
+<div class="text-color">
+
+    <h1>Numbers and percentages Pipes</h1>
+
+    <p>Pipes from Angular - Includes </p>
+
+</div>
+
+
+
+<div class="grid">
+
+    <div class="col-4" header="Ventas Netas" subheader="Del Presente Año">
+        <p-card header="Uppercase">
+            <i class="pi pi-dollar"></i> {{ ventasNetas | number: '1.2-2' }}
+        </p-card>
+    </div>
+
+    <div class="col-4">
+        <p-card header="Lowercase">
+
+        </p-card>
+    </div>
+
+    <div class="col-4">
+        <p-card header="Titlecase">
+
+        </p-card>
+    </div>
+
+</div>
