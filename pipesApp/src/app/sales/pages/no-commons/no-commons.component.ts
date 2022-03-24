@@ -8,6 +8,26 @@ import { PrimeNGConfig } from 'primeng/api';
 })
 export class NoCommonsComponent implements OnInit {
 
+  texto: string = 'Susana';
+  genero: string = 'femenino';
+
+  invitacionMapa = {
+    'masculino' : 'invitarlo',
+    'femenino' : 'invitarla'
+  }
+
+  clientes: string[] = ['Maria', 'Pedro', 'Juan'];
+
+  clientesMapa = {
+    '=0' : 'No tenemos Clientes Esperando',
+    '=1' : 'Tenemos un cliente esperando',
+    '=2' : 'Tenemos 2 clientes esperando',
+    'other' : 'Tenemos # clientes esperando'
+
+  }
+
+
+
   constructor(private primengConfig: PrimeNGConfig) { }
 
   ngOnInit(): void {
