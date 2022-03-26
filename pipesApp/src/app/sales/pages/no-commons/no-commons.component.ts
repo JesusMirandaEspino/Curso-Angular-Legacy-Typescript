@@ -31,6 +31,21 @@ export class NoCommonsComponent implements OnInit {
     direccion: 'Tonala, Jalisco'
   }
 
+  heroe = [
+    {
+      nombre: 'Spiderman',
+      vuela: false
+    },
+    {
+      nombre: 'Iron man',
+      vuela: true
+    },
+    {
+      nombre: 'Doctor Strange',
+      vuela: true
+    }
+  ];
+
   constructor(private primengConfig: PrimeNGConfig) { }
 
   ngOnInit(): void {
