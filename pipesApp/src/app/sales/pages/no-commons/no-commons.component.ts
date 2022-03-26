@@ -8,7 +8,7 @@ import { PrimeNGConfig } from 'primeng/api';
 })
 export class NoCommonsComponent implements OnInit {
 
-  texto: string = 'Susana';
+  texto: string = 'Miriam';
   genero: string = 'femenino';
 
   invitacionMapa = {
@@ -16,7 +16,7 @@ export class NoCommonsComponent implements OnInit {
     'femenino' : 'invitarla'
   }
 
-  clientes: string[] = ['Maria', 'Pedro', 'Juan'];
+  clientes: string[] = ['Maria', 'Pedro', 'Juan', 'Ramiro'];
 
   clientesMapa = {
     '=0' : 'No tenemos Clientes Esperando',
@@ -32,6 +32,29 @@ export class NoCommonsComponent implements OnInit {
 
   ngOnInit(): void {
     this.primengConfig.ripple = true;
+  }
+
+
+  cambiarNombre(){
+
+    if(this.genero == 'masculino' ){
+      this.texto = 'Miriam';
+      this.genero = 'femenino';
+    }else{
+      this.texto = 'Jesus';
+      this.genero = 'masculino';
+    }
+  }
+
+  borrarCliente(){
+
+    if( this.clientes.length < 1  ){
+      this.clientes = ['Maria', 'Pedro', 'Juan', 'Ramiro'];
+    }else{
+      this.clientes.pop();
+    }
+
+
   }
 
 }

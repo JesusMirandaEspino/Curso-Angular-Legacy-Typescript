@@ -15,6 +15,7 @@
             <p class="text-color">
                 {{ texto }} Es un placer {{ genero | i18nSelect : invitacionMapa }}
             </p>
+            <button pButton type="button" label="Cambiar nombre" (click)="cambiarNombre()" class="p-button-outlined"></button>
         </p-fieldset>
     </div>
 
@@ -24,6 +25,7 @@
             <p class="text-color">
                 Actualmente {{ clientes.length | i18nPlural : clientesMapa }}
             </p>
+            <button pButton type="button" label="Borrar nombre" (click)="borrarCliente()" class="p-button-outlined"></button>
         </p-fieldset>
     </div>
 
