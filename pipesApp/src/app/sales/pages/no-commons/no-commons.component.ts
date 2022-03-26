@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-no-commons',
@@ -46,6 +47,15 @@ export class NoCommonsComponent implements OnInit {
     }
   ];
 
+  miObservable =  interval(1000);
+
+
+  valorPromesa = new Promise( ( resolve, reject ) => {
+    setTimeout(() => {
+      resolve( 'Se ejecuto la promesa' );
+    }, 3500);
+  });
+
   constructor(private primengConfig: PrimeNGConfig) { }
 
   ngOnInit(): void {
@@ -72,6 +82,7 @@ export class NoCommonsComponent implements OnInit {
       this.clientes.pop();
     }
   }
+
 
 
 

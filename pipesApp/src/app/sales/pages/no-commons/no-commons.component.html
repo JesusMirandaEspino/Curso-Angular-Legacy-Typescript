@@ -25,7 +25,7 @@
             <p class="text-color">
                 Actualmente {{ clientes.length | i18nPlural : clientesMapa }}
             </p>
-            <button pButton type="button" label="Borrar nombre" (click)="borrarCliente()" class="p-button-outlined"></button>
+            <button pButton type="button" label="Borrar Cliente" (click)="borrarCliente()" class="p-button-outlined"></button>
         </p-fieldset>
     </div>
 
@@ -79,5 +79,19 @@
       </pre>
         </p-fieldset>
     </div>
+
+    <div class="col-">
+        <p-fieldset legend="Async Pipe" [toggleable]="true">
+            <pre>
+            {{ miObservable | async }}
+          </pre>
+            <hr>
+            <p *ngIf="!(valorPromesa | async)  ">Esperando Promesa</p>
+            <pre>
+            {{ valorPromesa | async }}
+          </pre>
+        </p-fieldset>
+    </div>
+
 
 </div>
