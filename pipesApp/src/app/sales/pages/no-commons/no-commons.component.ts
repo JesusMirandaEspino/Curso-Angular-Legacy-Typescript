@@ -23,10 +23,13 @@ export class NoCommonsComponent implements OnInit {
     '=1' : 'Tenemos un cliente esperando',
     '=2' : 'Tenemos 2 clientes esperando',
     'other' : 'Tenemos # clientes esperando'
-
   }
 
-
+  persona = {
+    nombre: 'Jesus',
+    edad: 33,
+    direccion: 'Tonala, Jalisco'
+  }
 
   constructor(private primengConfig: PrimeNGConfig) { }
 
@@ -53,8 +56,8 @@ export class NoCommonsComponent implements OnInit {
     }else{
       this.clientes.pop();
     }
-
-
   }
+
+
 
 }
