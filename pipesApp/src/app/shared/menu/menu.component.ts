@@ -36,7 +36,7 @@ export class MenuComponent implements OnInit {
                       label: 'No Commons',
                       icon: 'pi pi-dollar',
                       routerLink: 'nocommons'
-                    }
+                    },
                   ]
           },
 
@@ -44,9 +44,11 @@ export class MenuComponent implements OnInit {
             label: 'Personal Pipes',
             icon: 'pi pi-cog',
             items: [
-                  {
-
-                  }
+              {
+                label: 'Pipes Personalizados',
+                icon: 'pi pi-cog',
+                routerLink: 'ordinary'
+              }
             ]
           }
         ];
