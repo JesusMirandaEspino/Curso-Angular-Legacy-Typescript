@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrdinaryComponent implements OnInit {
 
+  cambiarLetras: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+
+  cambiarlasLetras(){
+    this.cambiarLetras = !this.cambiarLetras;
   }
 
 }

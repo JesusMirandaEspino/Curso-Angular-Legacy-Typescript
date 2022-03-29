@@ -2,6 +2,9 @@
 
     <h1>Personal Pipes</h1>
 
-    <p>Pipes from Angular - Not Includes {{ 'own creation' | mayusculas }} </p>
+    <p>Pipes from Angular - Not Includes {{ 'own creation' | mayusculas: cambiarLetras }} </p>
+
+
+    <button pButton type="button" label="Cambiar letras" (click)="cambiarlasLetras()"></button>
 
 </div>
