@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Color, Heroe } from '../../interfaces/ventas.interfaces';
 
 @Component({
   selector: 'app-ordinary',
@@ -8,10 +9,40 @@ import { Component, OnInit } from '@angular/core';
 export class OrdinaryComponent implements OnInit {
 
   cambiarLetras: boolean = true;
+  heroes: Heroe[] = [
+    {
+      nombre: 'GranMago',
+      vuela: true,
+      color: Color.azul
+    },
+    {
+      nombre: 'SuperGuerrero',
+      vuela: false,
+      color: Color.rojo
+    },
+    {
+      nombre: 'SuperArquero',
+      vuela: false,
+      color: Color.verde
+    },
+    {
+      nombre: 'Brujo',
+      vuela: false,
+      color: Color.negro
+    },
+    {
+      nombre: 'Hechicero',
+      vuela: true,
+      color: Color.rojo
+    },
+  ];
 
-  constructor() { }
+  constructor() {
+    // code
+  }
 
   ngOnInit(): void {
+    // code
   }
 
 
