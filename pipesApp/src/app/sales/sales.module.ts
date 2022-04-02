@@ -6,6 +6,7 @@ import { BasicComponent } from './pages/basic/basic.component';
 import { OrdinaryComponent } from './pages/ordinary/ordinary.component';
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 import { MayusculasPipe } from './pipes/mayusculas.pipe';
+import { VuelaPipe } from './pipes/vuela.pipe';
 
 
 
@@ -15,7 +16,8 @@ import { MayusculasPipe } from './pipes/mayusculas.pipe';
     NoCommonsComponent,
     BasicComponent,
     OrdinaryComponent,
-    MayusculasPipe
+    MayusculasPipe,
+    VuelaPipe
 
   ],
   exports: [
