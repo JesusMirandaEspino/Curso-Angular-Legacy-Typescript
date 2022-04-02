@@ -9,6 +9,8 @@ import { Color, Heroe } from '../../interfaces/ventas.interfaces';
 export class OrdinaryComponent implements OnInit {
 
   cambiarLetras: boolean = true;
+  ordenarPor: string = '';
+
   heroes: Heroe[] = [
     {
       nombre: 'GranMago',
@@ -49,5 +51,12 @@ export class OrdinaryComponent implements OnInit {
   cambiarlasLetras(){
     this.cambiarLetras = !this.cambiarLetras;
   }
+
+ordernarPorArreglo(valor: string){
+  this.ordenarPor = valor;
+}
+
+
+
 
 }

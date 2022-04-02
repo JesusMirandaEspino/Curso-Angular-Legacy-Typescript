@@ -20,9 +20,9 @@
 
     <div class="p-toolbar-group-right">
         <button pButton type="button" label="Cambiar letras" (click)="cambiarlasLetras()" class="mr-2"></button>
-        <button pButton icon="pi pi-sort" label="Ordernar Por Nombre" class="mr-1 p-button-info"></button>
-        <button pButton icon="pi pi-sort" label="Ordernar Por Valores" class="mr-2"></button>
-        <button pButton icon="pi pi-sort" label="Ordernar Por Color" class="mr-2 p-button-success"></button>
+        <button pButton icon="pi pi-sort" label="Ordernar Por Nombre" (click)="ordernarPorArreglo('nombre')" ass="mr-1 p-button-info"></button>
+        <button pButton icon="pi pi-sort" label="Ordernar Por Valores" (click)="ordernarPorArreglo('vuela')" lass="mr-2"></button>
+        <button pButton icon="pi pi-sort" label="Ordernar Por Color" (click)="ordernarPorArreglo('color')" class="mr-2 p-button-success"></button>
     </div>
 
 </p-toolbar>
@@ -31,7 +31,7 @@
 <div class="grid">
 
     <div class="col mt-4">
-        <p-table [value]="heroes | ordernar">
+        <p-table [value]="heroes | ordernar:ordenarPor ">
             <ng-template pTemplate="header">
                 <tr>
                     <th id="">Nombre</th>
@@ -39,6 +39,49 @@
                     <th id="">Color</th>
                 </tr>
             </ng-template>
+            <ng-template pTemplate="body" let-heroe>
+                <tr>
+                    <td>{{heroe.nombre}}</td>
+                    <td>{{heroe.vuela | vuela }}</td>
+                    <td>{{heroe.color}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+
+
+
+</div>
+
+
+<div class="grid">
+
+    <div class="col mt-4">
+        <p-table [value]="heroes | slice:0">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th pSortableColumn="nombre" id="">
+                        <div class="flex justify-content-between align-items-center">
+                            Nombre
+                            <p-sortIcon field="name"></p-sortIcon>
+                        </div>
+                    </th>
+                    <th pSortableColumn="vuela" id="">
+                        <div class="flex justify-content-between align-items-center">
+                            Vuela
+                            <p-sortIcon field="vuela"></p-sortIcon>
+                        </div>
+                    </th>
+                    <th pSortableColumn="color" id="">
+                        <div class="flex justify-content-between align-items-center">
+                            color
+                            <p-sortIcon field="color"></p-sortIcon>
+                        </div>
+                    </th>
+                </tr>
+
+            </ng-template>
+
             <ng-template pTemplate="body" let-heroe>
                 <tr>
                     <td>{{heroe.nombre}}</td>
