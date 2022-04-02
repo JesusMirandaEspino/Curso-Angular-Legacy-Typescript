@@ -31,7 +31,7 @@
 <div class="grid">
 
     <div class="col mt-4">
-        <p-table [value]="heroes">
+        <p-table [value]="heroes | ordernar">
             <ng-template pTemplate="header">
                 <tr>
                     <th id="">Nombre</th>
