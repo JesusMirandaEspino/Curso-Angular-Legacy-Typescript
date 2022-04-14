@@ -9,6 +9,7 @@ import { EditarComponent } from './pages/editar/editar.component';
 import { HeroesRoutingModule } from './heroes-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '../material/material.module';
+import { HeroesCardComponentComponent } from './components/heroes-card-component/heroes-card-component.component';
 
 
 
@@ -19,7 +20,8 @@ import { MaterialModule } from '../material/material.module';
     HeroeComponent,
     HomeComponent,
     ListadoComponent,
-    EditarComponent
+    EditarComponent,
+    HeroesCardComponentComponent
   ],
   imports: [
     CommonModule,

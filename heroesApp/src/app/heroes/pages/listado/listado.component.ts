@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { HeroesService } from '../../services/heroes.service';
 import { Heroe } from '../../interface/heroes.interface';
 
@@ -7,8 +7,9 @@ import { Heroe } from '../../interface/heroes.interface';
   templateUrl: './listado.component.html',
   styleUrls: ['./listado.component.scss']
 })
-export class ListadoComponent implements OnInit {
+  export class ListadoComponent implements OnInit {
 
+    @Output() heroe!:Heroe;
 
   public listHeroes: Heroe[] = [];
 
