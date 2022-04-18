@@ -19,5 +19,8 @@ export class HeroesService {
     return this.http.get<Heroe[]>( this.urlHeroe );
   }
 
+  getHeroeByid(id:string):Observable<Heroe>{
+    return this.http.get<Heroe>( `${this.urlHeroe}/${id}` );
+  }
 
 }
