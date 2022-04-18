@@ -26,7 +26,7 @@ const routes: Routes = [
         component: ListadoComponent
       },
       {
-        path: 'editar',
+        path: 'editar/:id',
         component: EditarComponent
       },
       {
