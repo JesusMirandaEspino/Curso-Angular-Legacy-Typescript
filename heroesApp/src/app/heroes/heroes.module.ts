@@ -11,7 +11,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '../material/material.module';
 import { HeroesCardComponentComponent } from './components/heroes-card-component/heroes-card-component.component';
 import { ImagenPipe } from './pipes/imagen.pipe';
-
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,13 +23,15 @@ import { ImagenPipe } from './pipes/imagen.pipe';
     ListadoComponent,
     EditarComponent,
     HeroesCardComponentComponent,
-    ImagenPipe
+    ImagenPipe,
+
   ],
   imports: [
     CommonModule,
     HeroesRoutingModule,
     FlexLayoutModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ]
 })
 export class HeroesModule { }
