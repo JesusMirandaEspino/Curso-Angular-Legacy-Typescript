@@ -10,6 +10,7 @@ import { environment } from '../../../environments/environment';
 export class HeroesService {
 
   private urlHeroe: string = environment.baseUrl //'http://localhost:3000/heroes';
+  private limit: number = environment.limit;
 
   constructor( private http: HttpClient ) {
     // code
@@ -23,5 +24,10 @@ export class HeroesService {
   getHeroeByid(id:string):Observable<Heroe>{
     return this.http.get<Heroe>( `${this.urlHeroe}/${id}` );
   }
+
+  getHeroeSugerencias(termino:string):Observable<Heroe[]>{
+    return this.http.get<Heroe[]>( `${this.urlHeroe}?q=${termino}&_limit=${this.limit}` );
+  }
+
 
 }

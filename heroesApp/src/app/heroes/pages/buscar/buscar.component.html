@@ -6,7 +6,7 @@
       <mat-divider></mat-divider>
     </div>
 
-    <div>
+    <div fxLayout="column">
         <h3>Buscador</h3>
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Number</mat-label>
@@ -19,7 +19,7 @@
                 [matAutocomplete]="auto"
                 (input)="buscar()">
 
-          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="heroeSeleted($event)">
 
             <mat-option *ngFor="let heroe of heroes " [value]="heroe">
               {{heroe.superhero}}
