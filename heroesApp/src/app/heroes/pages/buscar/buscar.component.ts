@@ -12,7 +12,7 @@ export class BuscarComponent implements OnInit {
 
   public termino: string = '';
   public heroes: Heroe[] = [];
-  public heroSeleted!: Heroe;
+  public heroSeleted: Heroe | undefined;
 
   constructor( private heroesService: HeroesService) {
     // code
@@ -23,13 +23,20 @@ export class BuscarComponent implements OnInit {
   }
 
   buscar(){
-    this.heroesService.getHeroeSugerencias(this.termino).subscribe( heroes => {
+    this.heroesService.getHeroeSugerencias(this.termino.trim()).subscribe( heroes => {
       this.heroes = heroes;
     } );
   }
 
 
   heroeSeleted(event:MatAutocompleteSelectedEvent){
+
+
+    if( !event.option.value ){
+      this.heroSeleted = undefined;
+      return;
+    }
+
     const heroe: Heroe = event.option.value;
     this.termino = heroe.superhero;
 
