@@ -29,5 +29,9 @@ export class HeroesService {
     return this.http.get<Heroe[]>( `${this.urlHeroe}?q=${termino}&_limit=${this.limit}` );
   }
 
+  agregarHeroe( _heroe: Heroe ):Observable<Heroe>{
+    return this.http.post<Heroe>( `${this.urlHeroe}`, _heroe );
+  }
+
 
 }
