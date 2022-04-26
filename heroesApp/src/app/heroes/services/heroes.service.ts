@@ -33,5 +33,10 @@ export class HeroesService {
     return this.http.post<Heroe>( `${this.urlHeroe}`, _heroe );
   }
 
+    actualizarHeroe( _heroe: Heroe ):Observable<Heroe>{
+    return this.http.put<Heroe>( `${this.urlHeroe}/${_heroe.id}`, _heroe );
+  }
+
+
 
 }

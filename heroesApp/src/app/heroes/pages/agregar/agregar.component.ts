@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Heroe, Publisher } from '../../interface/heroes.interface';
 import { HeroesService } from '../../services/heroes.service';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-agregar',
@@ -29,12 +31,25 @@ export class AgregarComponent implements OnInit {
     characters:       '',
   }
 
-  constructor( private heroesService: HeroesService) {
+  constructor( private heroesService: HeroesService, private activatedRoute: ActivatedRoute, private router: Router) {
     // code
   }
 
   ngOnInit(): void {
-    // code
+
+
+
+
+    this.activatedRoute.params
+    .pipe( switchMap( ({id}) =>   this.heroesService.getHeroeByid( id ) ) )
+    .subscribe( _heroe => {
+
+      this.heroe = _heroe;
+
+    });
+
+
+
   }
 
   guardar(){
@@ -42,9 +57,31 @@ export class AgregarComponent implements OnInit {
       return;
     }
 
-    this.heroesService.agregarHeroe(this.heroe).subscribe( resp => {
-      console.log( resp );
-    });
+
+
+    if( this.heroe.id ){
+      this.heroesService.actualizarHeroe(this.heroe).subscribe( resp => {
+        console.log(resp);
+        this.resetfieldHero();
+      });
+    }else{
+      this.heroesService.agregarHeroe(this.heroe).subscribe( _heroe => {
+      console.log(_heroe);
+        this.resetfieldHero();
+        this.router.navigate( ['heroe/editar', _heroe.id] );
+      });
+    }
+
+
   }
+
+  resetfieldHero(){
+    this.heroe.superhero =         '';
+    this.heroe.publisher =         Publisher.DCComics;
+    this.heroe.alter_ego =         '';
+    this.heroe.first_appearance =  '';
+    this.heroe.characters =        '';
+  }
+
 
 }
