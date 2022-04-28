@@ -38,5 +38,8 @@ export class HeroesService {
   }
 
 
+    borrarHeroe(_id:string  ):Observable<any>{
+    return this.http.delete<any>( `${this.urlHeroe}/${_id}`);
+  }
 
 }
