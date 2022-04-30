@@ -105,14 +105,20 @@ export class AgregarComponent implements OnInit {
 
   borrar(){
 
-    this.dialog.open( ConfirmarComponent, {
+    const dialog = this.dialog.open( ConfirmarComponent, {
       width:'20%',
-    } )
-/*
+      data: this.heroe
+    });
 
-    this.heroesService.borrarHeroe( this.heroe.id! ).subscribe( resp => {
-      this.router.navigate(['/heroes']);
-    });*/
+    dialog.afterClosed().subscribe( resp => {
+
+      if( resp ){
+          this.heroesService.borrarHeroe( this.heroe.id! ).subscribe( resp => {
+            this.router.navigate(['/heroes']);
+          });
+      }
+    });
+
   }
 
   openSnackBar(message: string, action: string = 'Ok') {
