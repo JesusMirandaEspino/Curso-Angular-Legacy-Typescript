@@ -12,6 +12,7 @@ import { MaterialModule } from '../material/material.module';
 import { HeroesCardComponentComponent } from './components/heroes-card-component/heroes-card-component.component';
 import { ImagenPipe } from './pipes/imagen.pipe';
 import { FormsModule } from '@angular/forms';
+import { ConfirmarComponent } from './components/confirmar/confirmar.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { FormsModule } from '@angular/forms';
     EditarComponent,
     HeroesCardComponentComponent,
     ImagenPipe,
+    ConfirmarComponent,
 
   ],
   imports: [
