@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Heroe, Publisher } from '../../interface/heroes.interface';
 import { HeroesService } from '../../services/heroes.service';
 import { switchMap } from 'rxjs/operators';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-agregar',
@@ -31,7 +32,12 @@ export class AgregarComponent implements OnInit {
     characters:       '',
   }
 
-  constructor( private heroesService: HeroesService, private activatedRoute: ActivatedRoute, private router: Router) {
+
+
+  constructor(  private heroesService: HeroesService,
+                private activatedRoute: ActivatedRoute,
+                private router: Router,
+                private _snackBar: MatSnackBar) {
     // code
   }
 
@@ -63,16 +69,18 @@ export class AgregarComponent implements OnInit {
 
     if( this.heroe.id ){
       this.heroesService.actualizarHeroe(this.heroe).subscribe( resp => {
-        console.log(resp);
         this.resetfieldHero();
+        this.openSnackBar( 'Registro Actualizado' );
       });
     }else{
       this.heroesService.agregarHeroe(this.heroe).subscribe( _heroe => {
-      console.log(_heroe);
         this.resetfieldHero();
         this.router.navigate( ['heroe/editar', _heroe.id] );
+        this.openSnackBar( 'Registro Creado' );
       });
     }
+
+
 
 
   }
@@ -92,5 +100,12 @@ export class AgregarComponent implements OnInit {
     });
   }
 
-
+  openSnackBar(message: string, action: string = 'Ok') {
+    this._snackBar.open(message, action, {
+      duration: 2500
+    });
+  }
 }
+
+
+
