@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   baseUrl: 'http://localhost:3000/heroes',
+  baseUrlUser: 'http://localhost:3000/usuarios',
   limit: 6
 };
 
