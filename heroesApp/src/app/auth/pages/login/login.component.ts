@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Auth } from '../../interfaces/auth.interfaces';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -8,6 +9,8 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+
+
 
   constructor( private rotuer: Router, private authServices: AuthService ) {
     // code
