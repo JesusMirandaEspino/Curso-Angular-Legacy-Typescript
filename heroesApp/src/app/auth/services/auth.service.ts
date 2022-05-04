@@ -22,8 +22,13 @@ export class AuthService {
 
   login(){
     return this.http.get<Auth>( `${this.baseUrlUser}/1` )
-      .pipe( tap( auth => this._auth = auth ) );
+      .pipe(  tap( auth => this._auth = auth ),
+              tap( auth => localStorage.setItem( 'auth', auth.id ) )  );
   }
 
+
+  logout(){
+    this._auth = undefined;
+  }
 
 }
