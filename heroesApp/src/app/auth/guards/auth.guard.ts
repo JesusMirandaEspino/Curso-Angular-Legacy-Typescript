@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, CanLoad, Route, RouterStateSnapshot, UrlSegment } from '@angular/router';
-import { Observable } from 'rxjs';
+import { ActivatedRouteSnapshot, CanActivate, CanLoad, Route, Router, RouterStateSnapshot, UrlSegment } from '@angular/router';
+import { Observable, tap } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 
 @Injectable({
@@ -9,20 +9,25 @@ import { AuthService } from '../services/auth.service';
 export class AuthGuard implements CanActivate, CanLoad {
 
 
-  constructor( private authServices: AuthService){}
+  constructor( private authServices: AuthService, private router: Router){}
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
-/* code
-      if( this.authServices.auth.id ){
-        return true;
-      }
-    return true;
-    */
 
-      return this.authServices.verificacionToken();
+  // code    if( this.authServices.auth.id ){
+  // code      return true;
+  // code    }
+  // code  return true;
+
+
+      return this.authServices.verificacionToken()
+      .pipe( tap( isAuth => {
+        if( !isAuth ){
+          this.router.navigate(['./auht/login'])
+        }
+      }) );
 
   }
 
@@ -31,16 +36,17 @@ export class AuthGuard implements CanActivate, CanLoad {
     route: Route,
     segments: UrlSegment[]): Observable<boolean> | boolean  {
 
-      return this.authServices.verificacionToken();
+      return this.authServices.verificacionToken().pipe( tap( isAuth => {
+        if( !isAuth ){
+          this.router.navigate(['./auht/login'])
+        }
+      }) );
 
-/*  example
+      // code     if( this.authServices.auth.id ){
+        // code      return true;
+        // code   }
 
-      if( this.authServices.auth.id ){
-        return true;
-      }
-
-    return false;
-*/
+        // code  return false;
 
   }
 

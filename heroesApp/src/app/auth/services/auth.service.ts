@@ -22,7 +22,7 @@ export class AuthService {
   }
 
 
-  verificacionToken():Observable<boolean> | boolean{
+  verificacionToken():Observable<boolean>{
     if( !localStorage.getItem('token') ){
       return of(false);
     }
