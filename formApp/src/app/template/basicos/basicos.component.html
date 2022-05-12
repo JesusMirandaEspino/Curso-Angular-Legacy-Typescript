@@ -8,8 +8,8 @@
       <div class="mb-3 row">
         <label for="col-sm-3 col-form-label">Productos</label>
         <div class="col-sm-9">
-          <input  ngModel class="form-control" type="text" name="nombreProducto"  placeholder="Nombre del Producto">
-          <span class="form-text text-danger"> Debe de escribir el nombre del producto </span>
+          <input minLength="3" required ngModel class="form-control" type="text" name="nombreProducto"  placeholder="Nombre del Producto">
+          <span *ngIf="miForm.controls['nombreProducto'].invalid &&  miForm.controls['nombreProducto'].touched" class="form-text text-danger"> Debe de escribir el nombre del producto </span>
         </div>
       </div>
 
@@ -17,7 +17,7 @@
       <div class="mb-3 row">
         <label for="col-sm-3 col-form-label">Precio del Producto</label>
         <div class="col-sm-9">
-          <input ngModel class="form-control" type="number" min="0" name="precioProducto"  placeholder="Precio del Producto">
+          <input required ngModel class="form-control" type="number" min="0" name="precioProducto"  placeholder="Precio del Producto">
           <span class="form-text text-danger"> Debe de escribir el precio del producto </span>
         </div>
       </div>
@@ -26,7 +26,7 @@
       <div class="mb-3 row">
         <label for="col-sm-3 col-form-label">Existencia del Producto</label>
         <div class="col-sm-9">
-          <input ngModel class="form-control" type="number" min="0" name="existenciaProducto"  placeholder="Existencia del Producto">
+          <input required ngModel class="form-control" type="number" min="0" name="existenciaProducto"  placeholder="Existencia del Producto">
           <span class="form-text text-danger"> Debe de escribir la existencia del producto </span>
         </div>
       </div>
