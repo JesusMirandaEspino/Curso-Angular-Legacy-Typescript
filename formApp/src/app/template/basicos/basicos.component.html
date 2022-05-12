@@ -2,14 +2,14 @@
 <hr>
 <div class="row">
   <div class="col">
-    <form (ngSubmit)="guardar(miForm.value)" #miForm="ngForm">
+    <form (ngSubmit)="guardar()" #miForm="ngForm">
 
       <!-- Campo de Producto -->
       <div class="mb-3 row">
         <label for="col-sm-3 col-form-label">Productos</label>
         <div class="col-sm-9">
           <input minLength="3" required ngModel class="form-control" type="text" name="nombreProducto"  placeholder="Nombre del Producto">
-          <span *ngIf="miForm.controls['nombreProducto'].invalid &&  miForm.controls['nombreProducto'].touched" class="form-text text-danger"> Debe de escribir el nombre del producto </span>
+          <span *ngIf="validNameProduct()" class="form-text text-danger"> Debe de escribir el nombre del producto </span>
         </div>
       </div>
 
@@ -18,7 +18,7 @@
         <label for="col-sm-3 col-form-label">Precio del Producto</label>
         <div class="col-sm-9">
           <input required ngModel class="form-control" type="number" min="0" name="precioProducto"  placeholder="Precio del Producto">
-          <span class="form-text text-danger"> Debe de escribir el precio del producto </span>
+          <span *ngIf="validPriceProduct()" class="form-text text-danger"> Debe de escribir el precio del producto </span>
         </div>
       </div>
 
@@ -27,7 +27,7 @@
         <label for="col-sm-3 col-form-label">Existencia del Producto</label>
         <div class="col-sm-9">
           <input required ngModel class="form-control" type="number" min="0" name="existenciaProducto"  placeholder="Existencia del Producto">
-          <span class="form-text text-danger"> Debe de escribir la existencia del producto </span>
+          <span *ngIf="validExistenciaProduct()" class="form-text text-danger"> Debe de escribir la existencia del producto </span>
         </div>
       </div>
 
