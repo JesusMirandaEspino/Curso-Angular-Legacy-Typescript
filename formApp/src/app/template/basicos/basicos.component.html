@@ -18,7 +18,7 @@
         <label for="col-sm-3 col-form-label">Precio del Producto</label>
         <div class="col-sm-9">
           <input required ngModel class="form-control" type="number" min="0" name="precioProducto"  placeholder="Precio del Producto">
-          <span *ngIf="validPriceProduct()" class="form-text text-danger"> Debe de escribir el precio del producto </span>
+          <span *ngIf="validPriceProduct()" class="form-text text-danger"> El precio debe ser mayor a cero </span>
         </div>
       </div>
 
@@ -27,13 +27,13 @@
         <label for="col-sm-3 col-form-label">Existencia del Producto</label>
         <div class="col-sm-9">
           <input required ngModel class="form-control" type="number" min="0" name="existenciaProducto"  placeholder="Existencia del Producto">
-          <span *ngIf="validExistenciaProduct()" class="form-text text-danger"> Debe de escribir la existencia del producto </span>
+          <span *ngIf="validExistenciaProduct()" class="form-text text-danger"> La existencia tiene que ser mayor a 1 </span>
         </div>
       </div>
 
       <div class="row">
         <div class="col">
-          <button class="btn btn-primary float-end" type="submit">
+          <button [disabled]="miForm.invalid" class="btn btn-primary float-end" type="submit">
             Guardar
           </button>
         </div>

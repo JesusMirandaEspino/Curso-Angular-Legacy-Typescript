@@ -27,7 +27,7 @@ validPriceProduct():boolean{
 }
 
 validExistenciaProduct():boolean{
-  return  this.miformulario.controls['existenciaProducto']?.invalid &&  this.miformulario.controls['existenciaProducto']?.touched;
+  return  (this.miformulario.controls['existenciaProducto']?.invalid &&  this.miformulario.controls['existenciaProducto']?.touched) &&  this.miformulario.controls['existenciaProducto']?.value < 0;
 }
 
 
