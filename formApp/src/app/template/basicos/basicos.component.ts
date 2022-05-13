@@ -8,6 +8,12 @@ import { NgForm } from '@angular/forms';
 })
 export class BasicosComponent implements OnInit {
 
+  initForm = {
+    nombreProducto: 'GTX 1660 Super',
+    precioProducto: 0,
+    existenciaProducto: 0
+  }
+
   @ViewChild('miForm',  { static: true}) miformulario!: NgForm;
 
   constructor() {
