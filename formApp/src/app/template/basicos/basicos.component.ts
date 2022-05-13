@@ -23,7 +23,7 @@ validNameProduct():boolean{
 }
 
 validPriceProduct():boolean{
-  return  this.miformulario.controls['precioProducto']?.invalid &&  this.miformulario.controls['precioProducto']?.touched;
+  return  (this.miformulario.controls['precioProducto']?.invalid &&  this.miformulario.controls['precioProducto']?.touched) && this.miformulario.controls['precioProducto']?.value < 0;
 }
 
 validExistenciaProduct():boolean{
@@ -34,7 +34,11 @@ validExistenciaProduct():boolean{
 
 // guardar(miform:NgForm){
   guardar(){
-  console.log( this.miformulario );
+  console.log( 'Se guardo Correctamente', this.miformulario );
+  this.miformulario.resetForm({
+    precioProducto:     0,
+    existenciaProducto: 0
+  });
 }
 
 
