@@ -5,8 +5,8 @@
   <div class="row mb-3"   >
     <label class="col-sm-3 col-form-label" for="nombre">Nombre</label>
     <div class="col-sm-9">
-        <input class="form-control" type="text" required name="nombre" ngModel placeholder="Nombre de la Persona">
-        <span  *ngIf="miformulario.controls['nombre']?.errors && miformulario.controls['nombre']?.touched" class="form-text text-danger">Debe de escribir el nombre</span>
+        <input class="form-control" type="text" required name="nombre" [ngModel]="persona.nombre" placeholder="Nombre de la Persona">
+       <!--    <span  *ngIf="miformulario.controls['nombre']?.errors && miformulario.controls['nombre']?.touched" class="form-text text-danger">Debe de escribir el nombre</span>-->
     </div>
   </div>
 
@@ -24,7 +24,7 @@
   <div class="row mb-3"   >
     <label class="col-sm-3 col-form-label" for="favoritos">Favoritos</label>
     <div class="col-sm-9">
-        <input class="form-control mb-1" type="text"  name="favoritos"  placeholder="">
+        <input required *ngFor="let juego of persona.favoritos; let i = index;" name="favorito_{{ i }}" [(ngModel)]="juego.nombre" class="form-control mb-1" type="text"  name="favoritos"  placeholder="">
     </div>
   </div>
 
@@ -32,7 +32,7 @@
 
   <div class="row">
     <div class="col">
-        <button [disabled]="miformulario.invalid" class="btn btn-primary float-end" (click)="guardar()" type="button"> Guardar </button>
+        <button [disabled]="" class="btn btn-primary float-end" (click)="guardar()" type="button"> Guardar </button>
     </div>
   </div>
 
