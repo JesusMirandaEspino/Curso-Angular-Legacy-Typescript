@@ -41,7 +41,9 @@ export class DinamicosComponent implements OnInit {
   }
 
 
-
+eliminar(index:number){
+  this.persona.favoritos.splice( index, 1 );
+}
 
 
 }
