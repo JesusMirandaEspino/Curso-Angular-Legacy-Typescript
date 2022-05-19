@@ -28,7 +28,7 @@
     <div class="col-sm-9">
 
       <div class="form-check form-switch">
-        <input class="form-check-input"  [(ngModel)]="persona.notificaciones" name="notificaciones" type="checkbox" role="switch" id="flexSwitchCheckChecked">
+        <input class="form-check-input" required [(ngModel)]="persona.notificaciones" name="notificaciones" type="checkbox" role="switch" id="flexSwitchCheckChecked">
         <label class="form-check-label" for="flexSwitchCheckChecked">Recibir Notificaciones</label>
       </div>
 
@@ -42,7 +42,7 @@
     <div class="col-sm-9">
 
       <div class="form-check">
-        <input class="form-check-input"  [(ngModel)]="terminoYCondiciones"     name="terminosCondiciones" type="radio" value="" id="terminosCondiciones">
+        <input class="form-check-input"  [(ngModel)]="terminoYCondiciones" required    name="terminosCondiciones" type="radio" value="" id="terminosCondiciones">
         <label class="form-check-label" for="terminosCondiciones">
           Terminos y condiciones
         </label>
