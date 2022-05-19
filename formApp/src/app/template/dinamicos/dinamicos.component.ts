@@ -27,6 +27,8 @@ export class DinamicosComponent implements OnInit {
     favoritos: [ {id: 1, nombre: 'The whitcher' }, {id: 2, nombre: 'Doom' }]
   }
 
+  public nuevoJuego: string = '';
+
 
   constructor() {
     // code
@@ -39,6 +41,15 @@ export class DinamicosComponent implements OnInit {
   guardar(){
 
   }
+
+agregar(){
+  const nuevoFavorito = {
+    id: this.persona.favoritos.length + 1,
+    nombre: this.nuevoJuego
+  }
+  this.persona.favoritos.push({...nuevoFavorito});
+  this.nuevoJuego = '';
+}
 
 
 eliminar(index:number){
