@@ -1,1 +1,42 @@
-<p>dinamicos works!</p>
+<h2> Reactivos: Dinamicos </h2>
+<hr>
+<form>
+
+  <div class="row mb-3"   >
+    <label class="col-sm-3 col-form-label" for="nombre">Nombre</label>
+    <div class="col-sm-9">
+        <input class="form-control" type="text" required name="nombre" placeholder="Nombre de la Persona">
+       <!--    <span  *ngIf="miformulario.controls['nombre']?.errors && miformulario.controls['nombre']?.touched" class="form-text text-danger">Debe de escribir el nombre</span>-->
+    </div>
+  </div>
+
+  <div class="row mb-3"   >
+    <label class="col-sm-3 col-form-label" for="nombre">Agregar</label>
+    <div class="col-sm-9">
+      <div class="input-group">
+        <input class="form-control" type="text" required name="nuevoJuego"  placeholder="Agregar Juego Favorito">
+        <button class="btn btn-outline-primary" >Agregar</button>
+      </div>
+    </div>
+  </div>
+
+  <!--- Lista de Juegos -->
+  <div class="row mb-3"   >
+    <label class="col-sm-3 col-form-label" for="favoritos">Favoritos</label>
+    <div class="col-sm-9">
+        <div class="input-group mb-1" >
+          <input required   class="form-control mb-1" type="text"  name="favoritos"  placeholder="">
+          <button [disabled]="" class="btn btn-danger float-end" type="button"> Eliminar </button>
+        </div>
+    </div>
+  </div>
+
+
+
+  <div class="row">
+    <div class="col">
+        <button [disabled]="" class="btn btn-primary float-end" type="button"> Guardar </button>
+    </div>
+  </div>
+
+</form>

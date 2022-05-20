@@ -1,0 +1,45 @@
+<h2> Reactivos: Basicos </h2>
+<hr>
+<div class="row">
+  <div class="col">
+    <form>
+
+      <!-- Campo de Producto -->
+      <div class="mb-3 row">
+        <label for="col-sm-3 col-form-label">Productos</label>
+        <div class="col-sm-9">
+          <input minLength="3" required  class="form-control" type="text" name="nombreProducto"  placeholder="Nombre del Producto">
+          <span  class="form-text text-danger"> Debe de escribir el nombre del producto </span>
+        </div>
+      </div>
+
+      <!-- Campo de Precio -->
+      <div class="mb-3 row">
+        <label for="col-sm-3 col-form-label">Precio del Producto</label>
+        <div class="col-sm-9">
+          <input required class="form-control" type="number" min="0" name="precioProducto"  placeholder="Precio del Producto">
+          <span  class="form-text text-danger"> El precio debe ser mayor a cero </span>
+        </div>
+      </div>
+
+      <!-- Campo de Existencia -->
+      <div class="mb-3 row">
+        <label for="col-sm-3 col-form-label">Existencia del Producto</label>
+        <div class="col-sm-9">
+          <input required class="form-control" type="number" min="0" name="existenciaProducto"  placeholder="Existencia del Producto">
+          <span  class="form-text text-danger"> La existencia tiene que ser mayor a 1 </span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <button  class="btn btn-primary float-end" type="submit">
+            Guardar
+          </button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+
