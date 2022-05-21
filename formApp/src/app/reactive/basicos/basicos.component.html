@@ -2,13 +2,13 @@
 <hr>
 <div class="row">
   <div class="col">
-    <form>
+    <form [formGroup]="miFormulario" >
 
       <!-- Campo de Producto -->
       <div class="mb-3 row">
         <label for="col-sm-3 col-form-label">Productos</label>
         <div class="col-sm-9">
-          <input minLength="3" required  class="form-control" type="text" name="nombreProducto"  placeholder="Nombre del Producto">
+          <input minLength="3" formControlName="nombreProducto" class="form-control" type="text" name="nombreProducto" >
           <span  class="form-text text-danger"> Debe de escribir el nombre del producto </span>
         </div>
       </div>
