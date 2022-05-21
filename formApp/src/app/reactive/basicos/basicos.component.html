@@ -8,7 +8,7 @@
       <div class="mb-3 row">
         <label for="col-sm-3 col-form-label">Productos</label>
         <div class="col-sm-9">
-          <input minLength="3" formControlName="nombreProducto" class="form-control" type="text" name="nombreProducto" >
+          <input minLength="3" formControlName="nombreProducto" class="form-control" type="text" placeholder="Nombre del Producto" name="nombreProducto" >
           <span  class="form-text text-danger"> Debe de escribir el nombre del producto </span>
         </div>
       </div>
@@ -17,7 +17,7 @@
       <div class="mb-3 row">
         <label for="col-sm-3 col-form-label">Precio del Producto</label>
         <div class="col-sm-9">
-          <input required class="form-control" type="number" min="0" name="precioProducto"  placeholder="Precio del Producto">
+          <input class="form-control" formControlName="precioProducto" type="number" min="0" placeholder="Precio del Producto" name="precioProducto" >
           <span  class="form-text text-danger"> El precio debe ser mayor a cero </span>
         </div>
       </div>
@@ -26,14 +26,14 @@
       <div class="mb-3 row">
         <label for="col-sm-3 col-form-label">Existencia del Producto</label>
         <div class="col-sm-9">
-          <input required class="form-control" type="number" min="0" name="existenciaProducto"  placeholder="Existencia del Producto">
+          <input class="form-control" formControlName="existenciaProducto" type="number" placeholder="Existencia del Producto" min="0" name="existenciaProducto">
           <span  class="form-text text-danger"> La existencia tiene que ser mayor a 1 </span>
         </div>
       </div>
 
       <div class="row">
         <div class="col">
-          <button  class="btn btn-primary float-end" type="submit">
+          <button  [disabled]="miFormulario.invalid" class="btn btn-primary float-end" type="submit">
             Guardar
           </button>
         </div>
