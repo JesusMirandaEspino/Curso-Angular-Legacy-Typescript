@@ -1,12 +1,12 @@
 <h2> Reactivos: Dinamicos </h2>
 <hr>
-<form>
+<form   (submit)="guardar()"  [formGroup]="miFormulario" >
 
   <div class="row mb-3"   >
     <label class="col-sm-3 col-form-label" for="nombre">Nombre</label>
     <div class="col-sm-9">
-        <input class="form-control" type="text" required name="nombre" placeholder="Nombre de la Persona">
-       <!--    <span  *ngIf="miformulario.controls['nombre']?.errors && miformulario.controls['nombre']?.touched" class="form-text text-danger">Debe de escribir el nombre</span>-->
+        <input class="form-control" formControlName="nombre" type="text" required name="nombre" placeholder="Nombre de la Persona">
+  <span  *ngIf="nombreValido('nombre')"  class="form-text text-danger">Debe de escribir el nombre</span>
     </div>
   </div>
 
@@ -35,7 +35,7 @@
 
   <div class="row">
     <div class="col">
-        <button [disabled]="" class="btn btn-primary float-end" type="button"> Guardar </button>
+        <button [disabled]="miFormulario.invalid" class="btn btn-primary float-end" type="button"> Guardar </button>
     </div>
   </div>
 
