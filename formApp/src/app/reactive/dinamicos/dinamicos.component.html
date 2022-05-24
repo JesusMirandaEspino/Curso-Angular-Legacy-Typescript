@@ -13,8 +13,8 @@
   <div class="row mb-3"   >
     <label class="col-sm-3 col-form-label" for="nombre">Agregar</label>
     <div class="col-sm-9">
-      <div class="input-group">
-        <input class="form-control" type="text" required name="nuevoJuego"  placeholder="Agregar Juego Favorito">
+      <div *ngFor="let favoritos of favoritosArray.controls; let i =  index"  formArrayName="favoritos"  class="input-group">
+        <input [formControlName]="i"   class="form-control" type="text" required [name]="i"  placeholder="Agregar Juego Favorito">
         <button class="btn btn-outline-primary" >Agregar</button>
       </div>
     </div>
