@@ -2,7 +2,7 @@
 <hr>
 <div class="row">
   <div class="col">
-    <form [formGroup]="miFormulario" >
+    <form  (submit)="guardar()" [formGroup]="miFormulario" >
 
       <!-- Campo de Producto -->
       <div class="mb-3 row">

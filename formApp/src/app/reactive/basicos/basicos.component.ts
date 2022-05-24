@@ -15,9 +15,9 @@ export class BasicosComponent implements OnInit {
   });*/
 
 miFormulario: FormGroup  = this.fb.group({
-  nombreProducto: ['RTX 2060', [Validators.required, Validators.minLength(3)  ] ],
-  precioProducto: [7500, [ Validators.required, Validators.min(0) ]],
-  existenciaProducto: [30, [ Validators.required, Validators.min(0) ]]
+  nombreProducto: [ , [Validators.required, Validators.minLength(3)  ] ],
+  precioProducto: [ , [ Validators.required, Validators.min(0) ]],
+  existenciaProducto: [ , [ Validators.required, Validators.min(0) ]]
   });
 
 
@@ -26,11 +26,28 @@ miFormulario: FormGroup  = this.fb.group({
   }
 
   ngOnInit(): void {
-    // code
+
+    this.miFormulario.setValue({
+      nombreProducto: 'RTX 2060',
+      precioProducto: 7500,
+      existenciaProducto: 30
+    });
   }
 
   nombreValido(campo: string){
     return this.miFormulario.controls[campo].errors && this.miFormulario.controls[campo].touched
+  }
+
+  guardar(){
+
+    if( this.miFormulario.invalid ){
+      this.miFormulario.markAllAsTouched();
+      return;
+    }
+
+      this.miFormulario.reset();
+
+
   }
 
 }
