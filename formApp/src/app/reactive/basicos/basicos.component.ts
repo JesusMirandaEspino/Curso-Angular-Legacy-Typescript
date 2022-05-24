@@ -29,4 +29,8 @@ miFormulario: FormGroup  = this.fb.group({
     // code
   }
 
+  nombreValido(campo: string){
+    return this.miFormulario.controls[campo].errors && this.miFormulario.controls[campo].touched
+  }
+
 }
