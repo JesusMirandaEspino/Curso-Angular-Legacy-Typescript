@@ -26,7 +26,7 @@
     <div class="col-sm-9">
         <div *ngFor="let favoritos of favoritosArray.controls; let i =  index"  formArrayName="favoritos" class="input-group mb-1" >
           <input required  [formControlName]="i"  [name]="i"  class="form-control mb-1" type="text"  name="favoritos"  placeholder="">
-          <button [disabled]="" class="btn btn-danger float-end" type="button"> Eliminar </button>
+          <button [disabled]="" (click)="borrar(i)" class="btn btn-danger float-end" type="button"> Eliminar </button>
         </div>
     </div>
   </div>
