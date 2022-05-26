@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-dinamicos',
@@ -20,6 +20,8 @@ miFormulario: FormGroup  = this.fb.group({
       ], [Validators.required] )
   });
 
+  nuevoFavorito: FormControl = this.fb.control( '', Validators.required );
+
 
   constructor( private fb: FormBuilder) {
     // code
@@ -33,17 +35,21 @@ miFormulario: FormGroup  = this.fb.group({
     return this.miFormulario.controls[campo].errors && this.miFormulario.controls[campo].touched
   }
 
+  agregarFavorito(){
+    if( this.nuevoFavorito.invalid ){ return }
+    this.favoritosArray.push( this.fb.control( this.nuevoFavorito.value, Validators.required) );
+
+    this.nuevoFavorito.reset();
+
+  }
+
 
   guardar(){
-
     if( this.miFormulario.invalid ){
       this.miFormulario.markAllAsTouched();
       return;
     }
-
       this.miFormulario.reset();
-
-
   }
 
 

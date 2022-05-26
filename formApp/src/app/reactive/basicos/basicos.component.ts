@@ -44,10 +44,7 @@ miFormulario: FormGroup  = this.fb.group({
       this.miFormulario.markAllAsTouched();
       return;
     }
-
       this.miFormulario.reset();
-
-
   }
 
 }
