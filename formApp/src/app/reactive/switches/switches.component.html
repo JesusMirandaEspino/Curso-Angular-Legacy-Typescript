@@ -1,7 +1,7 @@
 <h2>Templates: Switches  </h2>
 <hr>
 
-<form [formGroup]="miFormulario">
+<form (ngSubmit)="guardar()"  [formGroup]="miFormulario">
 
   <!--- Genero -->
   <div class="row mb-3">
@@ -53,7 +53,7 @@
 
   <div class="row">
     <div class="col">
-      <button class="btn btn-primary float-end" >Enviar</button>
+      <button type="submit" [disabled]="miFormulario.invalid" class="btn btn-primary float-end" >Enviar</button>
     </div>
   </div>
 
