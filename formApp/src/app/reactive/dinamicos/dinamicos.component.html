@@ -1,20 +1,20 @@
 <h2> Reactivos: Dinamicos </h2>
 <hr>
-<form   (submit)="guardar()"  [formGroup]="miFormulario" >
+<form   (ngSubmit)="guardar()"  [formGroup]="miFormulario" >
 
   <div class="row mb-3"   >
     <label class="col-sm-3 col-form-label" for="nombre">Nombre</label>
     <div class="col-sm-9">
-        <input class="form-control" formControlName="nombre" type="text" required name="nombre" placeholder="Nombre de la Persona">
+        <input class="form-control" formControlName="nombre" type="text"  placeholder="Nombre de la Persona">
   <span  *ngIf="nombreValido('nombre')"  class="form-text text-danger">Debe de escribir el nombre</span>
     </div>
   </div>
 
   <div class="row mb-3"   >
-    <label class="col-sm-3 col-form-label" for="nombre">Agregar</label>
+    <label class="col-sm-3 col-form-label" for="nuevoFavorito">Agregar</label>
     <div class="col-sm-9">
       <div   class="input-group">
-        <input  (keyup.enter)="agregarFavorito()" [formControl]="nuevoFavorito"    class="form-control" type="text" required   placeholder="Agregar Juego Favorito">
+        <input  (keyup.enter)="agregarFavorito()" [formControl]="nuevoFavorito"    class="form-control" type="text"    placeholder="Agregar Juego Favorito">
         <button class="btn btn-outline-primary" (click)="agregarFavorito()" >Agregar</button>
       </div>
     </div>
@@ -22,11 +22,11 @@
 
   <!--- Lista de Juegos -->
   <div class="row mb-3"   >
-    <label class="col-sm-3 col-form-label" for="favoritos">Favoritos</label>
-    <div class="col-sm-9">
-        <div *ngFor="let favoritos of favoritosArray.controls; let i =  index"  formArrayName="favoritos" class="input-group mb-1" >
-          <input required  [formControlName]="i"  [name]="i"  class="form-control mb-1" type="text"  name="favoritos"  placeholder="">
-          <button [disabled]="" (click)="borrar(i)" class="btn btn-danger float-end" type="button"> Eliminar </button>
+    <label class="col-sm-3 col-form-label" >Favoritos</label>
+    <div class="col-sm-9" formArrayName="favoritos">
+        <div *ngFor="let favoritos of favoritosArray.controls; let i =  index"   class="input-group mb-1" >
+          <input   [formControlName]="i"   class="form-control mb-1" type="text"  placeholder="">
+          <button (click)="borrar(i)" class="btn btn-danger float-end" type="button"> Eliminar </button>
         </div>
     </div>
   </div>
