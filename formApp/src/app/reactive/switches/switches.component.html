@@ -1,20 +1,20 @@
 <h2>Templates: Switches  </h2>
 <hr>
 
-<form>
+<form [formGroup]="miFormulario">
 
   <!--- Genero -->
   <div class="row mb-3">
     <label  class="col-sm-3 col-form-label" for="">Genero</label>
     <div class="col-sm-9">
       <div class="form-check">
-        <input class="form-check-input" name="radioGenero" type="radio" value="m" id="radioMasculino" required>
+        <input class="form-check-input"  formControlName="radioGenero"type="radio" value="m" id="radioMasculino" required>
           <label class="form-check-label" for="radioMasculino">
             Masculino
           </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input"  name="radioGenero" type="radio" value="f" id="radioFemenino" required>
+        <input class="form-check-input"   formControlName="radioGenero"   type="radio" value="f" id="radioFemenino" required>
         <label class="form-check-label" for="radioFemenino">
           Femenino
         </label>
@@ -28,7 +28,7 @@
     <div class="col-sm-9">
 
       <div class="form-check form-switch">
-        <input class="form-check-input"  name="notificaciones" type="checkbox" role="switch" id="flexSwitchCheckChecked">
+        <input class="form-check-input"  formControlName="notificaciones" type="checkbox" role="switch" id="flexSwitchCheckChecked">
         <label class="form-check-label" for="flexSwitchCheckChecked">Recibir Notificaciones</label>
       </div>
 
@@ -42,7 +42,7 @@
     <div class="col-sm-9">
 
       <div class="form-check">
-        <input class="form-check-input"  required    name="terminosCondiciones" type="radio" value="" id="terminosCondiciones">
+        <input class="form-check-input"   formControlName="terminosCondiciones" type="checkbox"  id="terminosCondiciones">
         <label class="form-check-label" for="terminosCondiciones">
           Terminos y condiciones
         </label>
