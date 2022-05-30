@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-resgistro',
@@ -14,7 +14,7 @@ export class ResgistroComponent implements OnInit {
   public miform: FormGroup = this.fb.group({
     nombre: [ '', [ Validators.required, Validators.pattern( this.nombreApellido ) ] ],
     email: [ '', [ Validators.required, Validators.pattern( this.emailVliadated ) ] ],
-
+    username: [ '', [ Validators.required, this.noPuedeSerStride ] ]
   });
 
   constructor( private fb: FormBuilder  ) { }
@@ -26,8 +26,13 @@ export class ResgistroComponent implements OnInit {
       email: 'Jesus@Miranda.com',
 
     });
+  }
 
 
+
+  noPuedeSerStride(control:  FormControl){
+    const value = control.value.trim();
+    console.log(value);
   }
 
   campoValido(campo:string){
