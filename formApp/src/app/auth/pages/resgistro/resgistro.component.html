@@ -17,9 +17,9 @@
         <div class="row mb-3">
           <label class="cols-sm-3 col-form-label" for="nombre">Email:</label>
           <div class="cols-sm-9 ">
-            <input id="email" type="text" class="form-control"  placeholder="Email" name="" >
+            <input id="email" formControlName="email" name="email" type="text" class="form-control"  placeholder="Email"  >
           </div>
-          <span class="form-text text-danger">Debe de escribir el correo del usuario</span>
+          <span *ngIf="campoValido('email')" class="form-text text-danger">Debe de escribir el correo del usuario</span>
         </div>
 
         <div class="row mb-3">
