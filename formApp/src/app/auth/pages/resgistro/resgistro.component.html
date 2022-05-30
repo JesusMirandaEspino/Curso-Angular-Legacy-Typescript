@@ -27,7 +27,7 @@
           <div class="cols-sm-9 ">
             <input id="username"  formControlName="username" type="text" class="form-control"  placeholder="Username" name="username" >
           </div>
-          <span class="form-text text-danger">Debe de escribir el nombre  del usuario</span>
+          <span  *ngIf="campoValido('username')"  class="form-text text-danger">Debe de escribir el nombre  del usuario</span>
         </div>
 
         <div class="row mb-3">
