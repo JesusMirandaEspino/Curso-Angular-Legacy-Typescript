@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { emailVliadatedpattern, nombreApellidopattern, noPuedeSerStride } from '../../../shared/validators/validators';
 
 @Component({
   selector: 'app-resgistro',
@@ -8,13 +9,12 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class ResgistroComponent implements OnInit {
 
-  public nombreApellido: string = '([a-zA-Z]+) ([a-zA-Z]+)';
-  public emailVliadated: string = '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$';
+
 
   public miform: FormGroup = this.fb.group({
-    nombre: [ '', [ Validators.required, Validators.pattern( this.nombreApellido ) ] ],
-    email: [ '', [ Validators.required, Validators.pattern( this.emailVliadated ) ] ],
-    username: [ '', [ Validators.required, this.noPuedeSerStride ] ]
+    nombre: [ '', [ Validators.required, Validators.pattern( nombreApellidopattern ) ] ],
+    email: [ '', [ Validators.required, Validators.pattern( emailVliadatedpattern ) ] ],
+    username: [ '', [ Validators.required, noPuedeSerStride ] ]
   });
 
   constructor( private fb: FormBuilder  ) { }
@@ -28,17 +28,6 @@ export class ResgistroComponent implements OnInit {
     });
   }
 
-
-
-  noPuedeSerStride(control:  FormControl){
-    const value: string = control.value?.trim().toLowerCase();
-    if( value === 'strider' ){
-      return {
-        noStrider: true
-      }
-    }
-    return null;
-  }
 
   campoValido(campo:string){
     return this.miform.get(campo)?.invalid && this.miform.get(campo)?.touched;
