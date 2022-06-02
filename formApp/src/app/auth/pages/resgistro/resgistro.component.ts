@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ValidatorsService } from '../../../shared/validators/validators.service';
 import { emailVliadatedpattern, nombreApellidopattern, noPuedeSerStride } from '../../../shared/validators/validators';
 
 @Component({
@@ -12,12 +13,12 @@ export class ResgistroComponent implements OnInit {
 
 
   public miform: FormGroup = this.fb.group({
-    nombre: [ '', [ Validators.required, Validators.pattern( nombreApellidopattern ) ] ],
-    email: [ '', [ Validators.required, Validators.pattern( emailVliadatedpattern ) ] ],
-    username: [ '', [ Validators.required, noPuedeSerStride ] ]
+    nombre: [ '', [ Validators.required, Validators.pattern( this.validatorsService.nombreApellidopattern ) ] ],
+    email: [ '', [ Validators.required, Validators.pattern( this.validatorsService.emailVliadatedpattern ) ] ],
+    username: [ '', [ Validators.required, this.validatorsService.noPuedeSerStride ] ]
   });
 
-  constructor( private fb: FormBuilder  ) { }
+  constructor( private fb: FormBuilder, private validatorsService: ValidatorsService  ) { }
 
   ngOnInit(): void {
 
