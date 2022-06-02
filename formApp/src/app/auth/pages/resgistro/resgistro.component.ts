@@ -15,7 +15,11 @@ export class ResgistroComponent implements OnInit {
   public miform: FormGroup = this.fb.group({
     nombre: [ '', [ Validators.required, Validators.pattern( this.validatorsService.nombreApellidopattern ) ] ],
     email: [ '', [ Validators.required, Validators.pattern( this.validatorsService.emailVliadatedpattern ) ] ],
-    username: [ '', [ Validators.required, this.validatorsService.noPuedeSerStride ] ]
+    username: [ '', [ Validators.required, this.validatorsService.noPuedeSerStride ] ],
+    pass1: [ '', [ Validators.required, Validators.minLength(6) ] ],
+    pass2: [ '', [ Validators.required ] ],
+  },{
+    validators: [ this.validatorsService.camposIguales( 'pass1', 'pass2' ) ]
   });
 
   constructor( private fb: FormBuilder, private validatorsService: ValidatorsService  ) { }

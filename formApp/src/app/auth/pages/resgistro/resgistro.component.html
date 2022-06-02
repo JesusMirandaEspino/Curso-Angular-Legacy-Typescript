@@ -33,7 +33,7 @@
         <div class="row mb-3">
           <label class="cols-sm-3 col-form-label" for="nombre">Password:</label>
           <div class="cols-sm-9 ">
-            <input id="pass1" type="password" class="form-control"  placeholder="Password" name="" >
+            <input  formControlName="pass1" id="pass1" type="password" class="form-control"  placeholder="Password" name="pass1" >
           </div>
           <span class="form-text text-danger">Debe de escribir el password  del usuario</span>
         </div>
@@ -41,9 +41,9 @@
         <div class="row mb-3">
           <label class="cols-sm-3 col-form-label" for="nombre">Confirmar Password:</label>
           <div class="cols-sm-9 ">
-            <input id="pass2" type="password" class="form-control"  placeholder="Password" name="" >
+            <input formControlName="pass2" id="pass2" type="password" class="form-control"  placeholder="Password" name="pass2" >
           </div>
-          <span class="form-text text-danger">Debe de escribir el password  del usuario</span>
+          <span class="form-text text-danger">Debe de ser igual</span>
         </div>
 
 
