@@ -11,7 +11,24 @@ import { EmailValidatorsService } from 'src/app/shared/validators/email-validato
 })
 export class ResgistroComponent implements OnInit {
 
+  get emailMsgerror(): string{
 
+    const errors = this.miform.get('email')?.errors;
+
+    if(errors?.['required']){
+      return 'Email obligatorio'
+    }
+
+    if(errors?.['pattern']){
+      return 'Escribe un emial con @ y final.com etc'
+    }
+
+    if(errors?.['emailTomado']){
+      return 'Este email ya está en uso'
+    }
+
+    return ''
+  }
 
   public miform: FormGroup = this.fb.group({
     nombre: [ '', [ Validators.required, Validators.pattern( this.validatorsService.nombreApellidopattern ) ] ],
@@ -45,14 +62,6 @@ export class ResgistroComponent implements OnInit {
 
   emailValido(){
     return this.miform.get('email')?.errors?.['required'] && this.miform.get('email')?.touched;
-  }
-
-  emailFormato(){
-    return this.miform.get('email')?.errors?.['pattern'] && this.miform.get('email')?.touched;
-  }
-
-  emailExiste(){
-    return this.miform.get('email')?.errors?.['emailTomado'] && this.miform.get('email')?.touched;
   }
 
 
