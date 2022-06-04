@@ -43,6 +43,18 @@ export class ResgistroComponent implements OnInit {
     return this.miform.get(campo)?.invalid && this.miform.get(campo)?.touched;
   }
 
+  emailValido(){
+    return this.miform.get('email')?.errors?.['required'] && this.miform.get('email')?.touched;
+  }
+
+  emailFormato(){
+    return this.miform.get('email')?.errors?.['pattern'] && this.miform.get('email')?.touched;
+  }
+
+  emailExiste(){
+    return this.miform.get('email')?.errors?.['emailTomado'] && this.miform.get('email')?.touched;
+  }
+
 
   submitForm(){
     this.miform.markAllAsTouched();

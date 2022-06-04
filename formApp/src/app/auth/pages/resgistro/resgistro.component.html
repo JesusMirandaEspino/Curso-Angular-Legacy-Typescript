@@ -19,7 +19,9 @@
           <div class="cols-sm-9 ">
             <input id="email" formControlName="email" name="email" type="text" class="form-control"  placeholder="Email"  >
           </div>
-          <span *ngIf="campoValido('email')" class="form-text text-danger">Debe de escribir el correo del usuario</span>
+          <span *ngIf="emailValido()" class="form-text text-danger">Debe de escribir el correo del usuario</span>
+          <span *ngIf="emailFormato()" class="form-text text-danger">Debe de escribir el correo correctamente</span>
+          <span *ngIf="emailExiste()" class="form-text text-danger">El correo ya existe en la base de datos</span>
         </div>
 
         <div class="row mb-3">
