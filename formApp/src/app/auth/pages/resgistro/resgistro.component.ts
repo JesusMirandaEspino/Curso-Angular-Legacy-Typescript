@@ -32,6 +32,8 @@ export class ResgistroComponent implements OnInit {
     this.miform.reset({
       nombre: 'Jesus Miranda',
       email: 'test1@test.com',
+      pass1: '123456',
+      pass2: '123456'
 
     });
   }

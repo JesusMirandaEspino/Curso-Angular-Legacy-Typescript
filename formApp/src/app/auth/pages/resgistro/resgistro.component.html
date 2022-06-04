@@ -35,7 +35,7 @@
           <div class="cols-sm-9 ">
             <input  formControlName="pass1" id="pass1" type="password" class="form-control"  placeholder="Password" name="pass1" >
           </div>
-          <span class="form-text text-danger">Debe de escribir el password  del usuario</span>
+          <span *ngIf="campoValido('pass1')" class="form-text text-danger">Debe de escribir el password  del usuario</span>
         </div>
 
         <div class="row mb-3">
@@ -43,13 +43,13 @@
           <div class="cols-sm-9 ">
             <input formControlName="pass2" id="pass2" type="password" class="form-control"  placeholder="Password" name="pass2" >
           </div>
-          <span class="form-text text-danger">Debe de ser igual</span>
+          <span *ngIf="campoValido('pass2')" class="form-text text-danger">Debe de ser igual</span>
         </div>
 
 
         <div class="row">
           <div class="col">
-            <button type="" class="btn btn-primary float-end" >Enviar</button>
+            <button type="" [disabled]="miform.pending" class="btn btn-primary float-end" >Enviar</button>
           </div>
         </div>
 
