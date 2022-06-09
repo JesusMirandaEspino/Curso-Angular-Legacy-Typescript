@@ -3,12 +3,25 @@
 
 
 <form [formGroup]="miform" (ngSubmit)="guardar()" >
+
+    <!-- Region  -->
     <div class="row">
       <div class="col">
         <label class="form-label" for="region">Contiente:</label>
         <select formControlName="region" class="form-control" name="region" id="selector-contiente">
             <option  value=""> --  Seleccione continente: -- </option>
             <option  *ngFor="let region of regiones" [value]="region | lowercase">{{ region }}</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Paises  -->
+    <div class="row">
+      <div class="col">
+        <label class="form-label" for="region">Pais:</label>
+        <select formControlName="pais" class="form-control" name="pais" id="selector-contiente">
+            <option  value=""> --  Seleccione Pais: -- </option>
+            <option  *ngFor="let pais of paises" [value]="pais.cca3 | lowercase">{{ pais.name.common }}</option>
         </select>
       </div>
     </div>
