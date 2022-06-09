@@ -17,7 +17,8 @@ export class SelectorPagesComponent implements OnInit {
 
   miform: FormGroup = this.fb.group({
     region: [ '', Validators.required ],
-    pais: [ '', Validators.required ]
+    pais: [ '', Validators.required ],
+    frontera: [ '', Validators.required ]
   });
 
   constructor( public fb: FormBuilder, private paisesServices: PaisesService ) {
@@ -46,6 +47,11 @@ export class SelectorPagesComponent implements OnInit {
       )
       .subscribe( _paises => {
         this.paises = _paises;
+        console.log(this.paises);
+    });
+
+    this.miform.get('pais')?.valueChanges.subscribe( _pais => {
+      this.paisesServices.getPaisesFronteras( _pais );
     });
 
   }
