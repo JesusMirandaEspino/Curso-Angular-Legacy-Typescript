@@ -16,11 +16,12 @@ export class SelectorPagesComponent implements OnInit {
   public regiones: string[] = [];
   public paises: PaisSmall[] = [];
   public fronteras: string[] = [];
+  public cargando: boolean =  false;
 
   miform: FormGroup = this.fb.group({
     region: [ '', Validators.required ],
     pais: [ '', Validators.required ],
-    frontera: [ '', Validators.required ]
+    frontera: [ { value: '', disabled: true }, Validators.required ]
   });
 
   constructor( public fb: FormBuilder, private paisesServices: PaisesService ) {
@@ -43,22 +44,30 @@ export class SelectorPagesComponent implements OnInit {
     this.miform.get( 'region' )?.valueChanges
       .pipe(
         tap( _ => {
-          this.miform.get('pais')?.reset('')
+          this.miform.get('pais')?.reset('');
+          this.miform.get('frontera')?.disable();
+          this.cargando = true;
         }),
         switchMap( region => this.paisesServices.getPaisesPorRegion( region ))
       )
       .subscribe( _paises => {
         this.paises = _paises;
         console.log(this.paises);
+        this.cargando = false;
     });
 
     this.miform.get('pais')?.valueChanges
     .pipe(
-      tap( _ => { this.fronteras = []; this.miform.get('frontera')?.reset(''); }),
+      tap( _ => {
+        this.fronteras = []; this.miform.get('frontera')?.reset('');
+        this.cargando = true;
+        this.miform.get('frontera')?.enable();
+      }),
       switchMap( codigo => this.paisesServices.getPaisesFronteras(codigo) )
     )
     .subscribe( _pais => {
       this.fronteras = _pais?.borders || [];
+      this.cargando = false;
       console.log( _pais );
     });
 
