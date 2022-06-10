@@ -54,6 +54,7 @@ export class SelectorPagesComponent implements OnInit {
 
     this.miform.get('pais')?.valueChanges
     .pipe(
+      tap( _ => { this.fronteras = []; this.miform.get('frontera')?.reset(''); }),
       switchMap( codigo => this.paisesServices.getPaisesFronteras(codigo) )
     )
     .subscribe( _pais => {
