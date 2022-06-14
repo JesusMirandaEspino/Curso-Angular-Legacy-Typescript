@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MuestraNombresComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit(): void {
+
   }
 
 }
