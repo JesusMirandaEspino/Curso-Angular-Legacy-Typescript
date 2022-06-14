@@ -1,3 +1,6 @@
 <h1>Ciclo de vida de un componente</h1>
 <hr>
-<app-pagina1></app-pagina1>
+
+  <button  (click)="mostrar = !mostrar">Mostrar</button>
+
+<app-pagina1 *ngIf="mostrar" ></app-pagina1>
