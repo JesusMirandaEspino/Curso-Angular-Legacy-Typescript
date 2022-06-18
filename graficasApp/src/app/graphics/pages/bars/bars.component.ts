@@ -31,10 +31,11 @@ export class BarsComponent implements OnInit {
       ];
 
       public barChartData: ChartData<'bar'> = {
-        labels: [ '2006', '2007', '2008', '2009', '2010', '2011', '2012' ],
+        labels: [ '2020', '2021', '2022', '2023', '2024', '2025', '2026' ],
         datasets: [
-          { data: [ 65, 59, 80, 81, 56, 55, 40 ], label: 'Series A' },
-          { data: [ 28, 48, 40, 19, 86, 27, 90 ], label: 'Series B' }
+          { data: [ 65, 59, 80, 81, 56, 55, 40 ], label: 'Series A', backgroundColor: '#0D6AFF', hoverBackgroundColor: '#0C29F5' },
+          { data: [ 28, 48, 40, 19, 86, 27, 90 ], label: 'Series B', backgroundColor: '#0DEAFF', hoverBackgroundColor: '#0C29F5'  },
+          { data: [ 28, 48, 40, 19, 86, 27, 90 ], label: 'Series C', backgroundColor: '#0095E8', hoverBackgroundColor: '#0C29F5'  }
         ]
       };
 
@@ -48,7 +49,7 @@ export class BarsComponent implements OnInit {
 
 
   public randomize(): void {
-    // Only Change 3 values
+
     this.barChartData.datasets[0].data = [
       Math.round(Math.random() * 100),
       59,
