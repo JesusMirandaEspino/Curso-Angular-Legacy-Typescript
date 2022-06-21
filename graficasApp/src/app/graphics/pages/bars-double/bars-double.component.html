@@ -1,1 +1,27 @@
-<p>bars-double works!</p>
+<div class="row">
+  <div class="col">
+    <h2>Grafico de Barras Dobles</h2>
+  </div>
+</div>
+
+
+<div class="row mb-5">
+  <div class="col">
+    <div style="display: block">
+            <h3>Grafica 1</h3>
+            <app-graphics-bar  barChartType="line"  [barChartData]="proveedoresData" [barChartOptions]="lineOptions">
+            </app-graphics-bar>
+        </div>
+      </div>
+</div>
+
+<div class="row ">
+  <div class="col">
+    <div style="display: block">
+            <h3>Grafica 2</h3>
+            <app-graphics-bar barChartType="bar"  [barChartData]="productoData"></app-graphics-bar>
+        </div>
+      </div>
+</div>
+
+
