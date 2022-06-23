@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AgregarComponent implements OnInit {
 
+
   public miform: FormGroup = this.fb.group({
     nombre: ['', Validators.required]
   });
