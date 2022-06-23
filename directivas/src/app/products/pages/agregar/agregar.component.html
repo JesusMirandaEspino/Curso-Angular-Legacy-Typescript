@@ -1,16 +1,16 @@
 <h2 class="mt-5">Agregar Productos</h2>
 
-<form>
+<form [formGroup]="miform">
 
   <div class="row g-3 align-items-center mb-3">
 
     <div class="col-auto">
-      <label for=""  class="col-form-label">NOmbre</label>
+      <label for=""  class="col-form-label">Nombre</label>
     </div>
     <div class="col-auto">
-      <input class="form-control" type="text" name="nombre" id="nombre">
+      <input class="form-control" formControlName="nombre" type="text" name="nombre" id="nombre">
     </div>
-    <div class="col-auto">
+    <div class="col-auto" miDIrectivaPersonalizada msgErr="Este campo tiene que ser un nombre" *ngIf="tieneError('nombre')">
       <span class="form-text">Este campo es requerido</span>
     </div>
 
