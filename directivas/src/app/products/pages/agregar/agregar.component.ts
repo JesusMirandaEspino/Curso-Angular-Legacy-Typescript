@@ -8,6 +8,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AgregarComponent implements OnInit {
 
+  public color: string = 'red'
+  public texto1 = 'Jesus Miranda'
 
   public miform: FormGroup = this.fb.group({
     nombre: ['', Validators.required]
@@ -23,6 +25,15 @@ export class AgregarComponent implements OnInit {
 
   tieneError(_campo: string){
     return this.miform.get( _campo )?.invalid || false;
+  }
+
+  cambiarNombre(){
+    this.texto1 = 'Yisus Miranda';
+  }
+
+  cambiarColor(){
+    const color = "#xxxxxx".replace(/x/g, _y=>(Math.random()*16|0).toString(16));
+    this.color = color;
   }
 
 }
