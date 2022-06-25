@@ -10,13 +10,13 @@ export class ErrorMsgDirective implements OnInit, OnChanges {
 
   public htmlELement: ElementRef<HTMLElement>;
   @Input() set color( _valor: string ){
-    this.htmlELement.nativeElement.style.color = _valor;
     this._color = _valor;
+    this.setColor();
   }
 
   @Input() set mensaje(_valor: string){
-    this.htmlELement.nativeElement.innerText = _valor;
     this._mensaje = _valor;
+    this.setText()
   }
 
   constructor( private element: ElementRef<HTMLElement> ) {
@@ -26,23 +26,20 @@ export class ErrorMsgDirective implements OnInit, OnChanges {
 
   ngOnInit():void{
     console.log('init directivas');
-    //this.setColor();
-    //this.setText();
+    this.setColor();
+    this.setText();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-
-
-
-
+    // code
   }
 
   setColor(): void{
-    this.htmlELement.nativeElement.style.color = this.color;
+    this.htmlELement.nativeElement.style.color = this._color;
   }
 
   setText(): void{
-    this.htmlELement.nativeElement.innerText = this.mensaje;
+    this.htmlELement.nativeElement.innerText = this._mensaje;
   }
 
 }
