@@ -1,0 +1,18 @@
+{
+  "name": "authserver",
+  "version": "1.0.0",
+  "description": "Server Auth Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "auth",
+    "app",
+    "node",
+    "angular",
+    "server"
+  ],
+  "author": "Jesus Miranda",
+  "license": "ISC"
+}
