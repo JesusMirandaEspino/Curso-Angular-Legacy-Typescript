@@ -6,6 +6,9 @@ require('dotenv').config();
 const app = express();
 
 
+// Directorio Publico
+app.use( express.static( './public' ) );
+
 // Cors
 app.use( cors() );
 
