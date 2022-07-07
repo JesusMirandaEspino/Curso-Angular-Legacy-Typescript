@@ -52,14 +52,53 @@ const crearUsuario = async (req, res = response) => {
 }
 
 
-const loginUsuario = (req, res = response) => {
+const loginUsuario = async (req, res = response) => {
 
     const { email, password } = req.body;
 
-    return res.json({
-        ok: true,
-        msg: 'Login de usuario /'
-    });
+
+    try{
+
+        const dbUser = await  Usuarios.findOne({email});
+
+        if( !dbUser ){
+            return res.status( 400 ).json({
+                    ok: false,
+                    msg: 'Error en contraseña o correo'
+                    });
+        }
+
+        const validPassword = bcrypt.compareSync( password, dbUser.password );
+
+        if( !validPassword ){
+            return res.status( 400 ).json({
+                    ok: false,
+                    msg: 'Error en contraseña o correo'
+                    });
+        }
+
+        // token
+        const token = await generarJWT( dbUser.id, dbUser.name );
+
+        return res.json({
+            ok: true,
+            uid: dbUser.id,
+            name: dbUser.name,
+            token,
+            msg: 'Login de usuario /'
+        });
+
+    }catch(error){
+        console.log(error);
+        return res.status( 500 ).json({
+            ok: false,
+            msg: 'Consulte con el administrador'
+        });
+    }
+
+
+
+
 }
 
 
