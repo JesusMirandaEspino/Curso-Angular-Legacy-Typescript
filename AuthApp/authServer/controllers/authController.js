@@ -103,8 +103,13 @@ const loginUsuario = async (req, res = response) => {
 
 
 const renewUsuario = (req, res = response) => {
+
+    const { uid, name} = req;
+
     return res.json({
         ok: true,
+        uid, 
+        name,
         msg: 'Renew /renew'
     });
 }
