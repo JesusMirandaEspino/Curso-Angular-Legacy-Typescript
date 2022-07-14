@@ -30,8 +30,12 @@ export class LoginComponent implements OnInit {
 
     this.authservices.login(email, password).subscribe( resp => {
       console.log(resp);
+      if( resp ){
+        this.router.navigateByUrl('/dashboard');
+      }else{
+
+      }
     });
-    // url this.router.navigateByUrl('/dashboard');
   }
 
 }
