@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
     password: [ '123456', [ Validators.required, Validators.min(6) ] ]
   });
 
-  constructor( private fb: FormBuilder ) {
+  constructor( private fb: FormBuilder, private router: Router) {
     // code
   }
 
@@ -24,6 +25,7 @@ export class LoginComponent implements OnInit {
 
   login(){
     console.log('hola');
+    this.router.navigateByUrl('/dashboard');
   }
 
 }
