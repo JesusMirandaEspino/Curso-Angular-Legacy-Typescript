@@ -24,6 +24,7 @@ export class DahsboardComponent implements OnInit {
 
   logout(){
     this.router.navigateByUrl('/auth');
+    this.authService.logout();
   }
 
 }
